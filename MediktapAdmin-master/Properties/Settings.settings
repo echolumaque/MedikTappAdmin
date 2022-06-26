@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MediktapAdmin.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=DESKTOP-N1RG1OM\SQLEXPRESS;Initial Catalog=NewDB;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SampleData" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Juan Dela Cruz:Urinalysis:2022-06-28 08:00:00|Maria Clara:Blood Chem:2022-06-28 13:30:00</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

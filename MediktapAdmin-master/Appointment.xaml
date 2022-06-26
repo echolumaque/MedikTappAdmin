@@ -1,0 +1,27 @@
+﻿<Window x:Class="MediktapAdmin.Appointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediktapAdmin"
+        mc:Ignorable="d"
+        Title="Appointment" Height="450" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#695CD5" HorizontalAlignment="Left" Height="419" Stroke="Black" VerticalAlignment="Top" Width="210"/>
+        <Calendar x:Name="cal1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Width="205" Height="196" SelectedDatesChanged="Calendar_SelectedDatesChanged" Foreground="White" Background="White"/>
+        <ComboBox x:Name="cbservices" HorizontalAlignment="Left" Margin="210,72,0,0" VerticalAlignment="Top" Width="582" Grid.ColumnSpan="2" SelectionChanged="cbservices_SelectionChanged"/>
+        <DockPanel HorizontalAlignment="Left" Height="310" LastChildFill="False" Margin="215,99,0,0" VerticalAlignment="Top" Width="567" Grid.ColumnSpan="2">
+            <DataGrid x:Name="dtschedule" Height="310" VerticalAlignment="Top" Width="566">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Time" Width="75" Binding="{Binding Time}"/>
+                    <DataGridTextColumn Header="" Width="500"  Binding="{Binding Names}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Height="100" LastChildFill="False" Margin="22,-53,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
