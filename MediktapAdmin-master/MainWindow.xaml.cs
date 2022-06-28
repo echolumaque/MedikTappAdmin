@@ -31,9 +31,10 @@ namespace MediktapAdmin
             meidkTapMenu.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            HelpWindow helpWindow = new HelpWindow();
+            helpWindow.Show();
         }
     }
 }
