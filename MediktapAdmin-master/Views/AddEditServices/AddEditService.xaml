@@ -1,0 +1,104 @@
+﻿<view:BaseWindow x:Class="MediktapAdmin.Views.AddEditServices.AddEditService"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:view="clr-namespace:MediktapAdmin.Templates"
+                 xmlns:vm="clr-namespace:MediktapAdmin.Views.AddEditServices"
+                 Title="Add or Edit MedikTapp's service"
+                 Width="1280"
+                 Height="720"
+                 d:DataContext="{d:DesignInstance Type=vm:AddEditServiceViewModel}"
+                 x:TypeArguments="vm:AddEditServiceViewModel"
+                 ResizeMode="NoResize"
+                 WindowStartupLocation="CenterScreen"
+                 WindowStyle="ToolWindow"
+                 mc:Ignorable="d">
+
+    <Grid Width="590"
+          Height="185"
+          Margin="6,0,0,0"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0"
+               Margin="10,25,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Service Name" />
+
+        <TextBox Grid.Column="1"
+                 Width="246"
+                 Height="23"
+                 Margin="0,28,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="{Binding ServiceName}"
+                 TextWrapping="Wrap" />
+
+        <Label Grid.Column="0"
+               Margin="10,65,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Service Description" />
+
+        <TextBox Grid.Column="1"
+                 Width="246"
+                 Height="23"
+                 Margin="0,68,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="{Binding ServiceDescription}"
+                 TextWrapping="Wrap" />
+
+        <Label Grid.Column="0"
+               Margin="10,104,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Service Price" />
+
+        <TextBox Grid.Column="1"
+                 Width="246"
+                 Height="23"
+                 Margin="0,107,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="{Binding ServicePrice}"
+                 TextWrapping="Wrap" />
+
+        <Button Grid.Column="2"
+                Width="90"
+                Height="20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Background="#695CD5"
+                BorderThickness="0"
+                Command="{Binding AddServiceCmd}"
+                Content="Add Service"
+                Foreground="White" />
+
+        <Button Grid.Column="2"
+                Width="90"
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Background="White"
+                BorderThickness="0"
+                Command="{Binding OpenImageCmd}"
+                Content="Open Image"
+                Foreground="#695CD5" />
+
+        <Image Grid.Column="2"
+               Width="100"
+               Height="100"
+               Margin="0,30,0,0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               Source="{Binding ServiceImage}" />
+    </Grid>
+</view:BaseWindow>

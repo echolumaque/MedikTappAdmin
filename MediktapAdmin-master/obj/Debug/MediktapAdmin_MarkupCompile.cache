@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\bithi\Desktop\Capstone\admin\MediktapAdmin-master\obj\Debug\
+C:\Users\Echo Lumaque\Desktop\PUP\3rd Year Second Semester\Capstone\MedikTappAdmin\MediktapAdmin-master\obj\Debug\
 MediktapAdmin
 none
 false
 DEBUG;TRACE
-C:\Users\bithi\Desktop\Capstone\admin\MediktapAdmin-master\App.xaml
-6-1531357204
+C:\Users\Echo Lumaque\Desktop\PUP\3rd Year Second Semester\Capstone\MedikTappAdmin\MediktapAdmin-master\App.xaml
+61425065311
 
-16-1334036784
-13-1310406943
-AddEditPromo.xaml;AddEditService.xaml;Appointment.xaml;MainWindow.xaml;MeidkTapMenu.xaml;Services.xaml;
+261259221467
+135200527001
+Views\AddEditPromos\AddEditPromo.xaml;Views\AddEditServices\AddEditService.xaml;Views\Appointments\Appointment.xaml;Views\MainWindows\MainWindow.xaml;Views\MedikTappMenus\MedikTappMenu.xaml;Views\Services\Services.xaml;
 
-True
+False
 
