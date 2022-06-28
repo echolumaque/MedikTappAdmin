@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen" 
         Background="#FFECECEC" Foreground="#FFECECEC">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
@@ -43,7 +43,7 @@
                  VerticalAlignment="Top"
                  Width="368" Grid.Column="1"
                  BorderBrush="White"/>
-        
+
         <TextBox x:Name="txtpassword" 
                  HorizontalAlignment="Left"
                  Height="30" Margin="241,286,0,0"
@@ -117,7 +117,15 @@
                Margin="315,142,0,0" 
                VerticalAlignment="Top" 
                Width="167" FontSize="16" Foreground="#695CD5"/>
-        
+
+        <Button Content="Do you need help? " 
+                Background="Transparent"
+                BorderThickness="0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                Margin="345,384,0,0" 
+                VerticalAlignment="Top" Click="Button_Click"/>
+
 
     </Grid>
 </Window>
