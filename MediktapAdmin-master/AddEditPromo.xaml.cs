@@ -28,6 +28,7 @@ namespace MediktapAdmin
                 txtpromoname.Text = "";
                 txtpromodescription.Text = "";
                 txtpromoprice.Text = "";
+                dtptomoperiodStart.SelectedDate = DateTime.Now;
                 dtpromoperiod.SelectedDate = DateTime.Now;
                 btnsavepromo.Tag = Action;
             }
@@ -36,6 +37,7 @@ namespace MediktapAdmin
                 txtpromoname.Text = promo.PromoName;
                 txtpromodescription.Text = promo.PromoDescription;
                 txtpromoprice.Text = promo.PromoPrice.ToString();
+                dtptomoperiodStart.SelectedDate = DateTime.Now;
                 dtpromoperiod.SelectedDate = promo.PromoPeriod;
                 btnsavepromo.Tag = Action;
             }
@@ -49,6 +51,7 @@ namespace MediktapAdmin
             promo.PromoDescription = txtpromodescription.Text;
             promo.PromoPrice = txtpromoprice.Text == "" ? 0 : Convert.ToDouble(txtpromoprice.Text);
             promo.PromoPeriod = dtpromoperiod.SelectedDate.Value;
+            promo.PromoPeriod = dtptomoperiodStart.SelectedDate.Value;
             MessageReturn mr = promo.SavePromo(action);
             MessageBox.Show(mr.Message);
             if (mr.IsSuccess)
@@ -61,6 +64,10 @@ namespace MediktapAdmin
             {
                 this.Close();
             }
+
+
+
+
         }
     }
 }
