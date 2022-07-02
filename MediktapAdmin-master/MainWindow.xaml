@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:MediktapAdmin"
         mc:Ignorable="d"
         Title="MedikTap Admin - Login" 
-        Height="450" 
-        Width="614.376"
+        Height="480" 
+        ResizeMode="NoResize"
+        Width="854"
         WindowStyle="ToolWindow" 
         WindowStartupLocation="CenterScreen" 
         Background="#FFECECEC" Foreground="#FFECECEC">
@@ -23,7 +24,7 @@
                    Fill="White" 
                    HorizontalAlignment="Left" 
                    Height="53" 
-                   Margin="206,263,0,0"
+                   Margin="317,256,0,0"
                    Stroke="White" 
                    VerticalAlignment="Top"
                    Width="400"
@@ -32,13 +33,13 @@
         <Rectangle Grid.ColumnSpan="2" Fill="White"
                    HorizontalAlignment="Left"
                    Height="53" 
-                   Margin="206,187,0,0"
+                   Margin="315,171,0,0"
                    Stroke="White" VerticalAlignment="Top" 
                    Width="400"/>
 
         <TextBox x:Name="txtusername" 
                  HorizontalAlignment="Left"
-                 Height="27" Margin="238,213,0,0" 
+                 Height="27" Margin="347,197,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
                  Width="368" Grid.Column="1"
@@ -46,7 +47,7 @@
 
         <TextBox x:Name="txtpassword" 
                  HorizontalAlignment="Left"
-                 Height="30" Margin="241,286,0,0"
+                 Height="30" Margin="352,279,0,0"
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
                  Width="365" Grid.Column="1" 
@@ -54,7 +55,7 @@
         <Button x:Name="btnlogin"
                 Content="Login" 
                 HorizontalAlignment="Left" 
-                Margin="332,344,0,0" 
+                Margin="456,344,0,0" 
                 VerticalAlignment="Top" 
                 Width="134" Height="28" 
                 Click="btnlogin_Click" 
@@ -63,7 +64,7 @@
                 Foreground="White"/>
         <Label Content="Username"
                HorizontalAlignment="Left" 
-               Margin="238,187,0,0" 
+               Margin="347,171,0,0" 
                VerticalAlignment="Top" 
                Grid.Column="1" 
                Height="26"
@@ -71,7 +72,7 @@
                Foreground="#FF5900D8"/>
         <Label Content="Password"
                HorizontalAlignment="Left" 
-               Margin="238,260,0,0" 
+               Margin="349,253,0,0" 
                VerticalAlignment="Top" 
                Grid.Column="1" Height="26" 
                Width="71" Foreground="#695CD5"
@@ -79,7 +80,7 @@
         <Rectangle Grid.ColumnSpan="2" 
                    Fill="#FFFDFCE7" 
                    HorizontalAlignment="Left" 
-                   Height="434" Stroke="#FFFDFCE7"
+                   Height="456" Stroke="#FFFDFCE7"
                    VerticalAlignment="Center" 
                    Width="206"/>
         <Label Grid.ColumnSpan="2" 
@@ -97,7 +98,7 @@
         <Image Grid.ColumnSpan="2" 
                HorizontalAlignment="Left" 
                Height="27" 
-               Margin="211,213,0,0"
+               Margin="320,197,0,0"
                VerticalAlignment="Top"
                Width="22" 
                Source="username.png" 
@@ -106,7 +107,7 @@
         <Image Grid.ColumnSpan="2"
                HorizontalAlignment="Left" 
                Height="27" 
-               Margin="210,289,0,0" 
+               Margin="321,282,0,0" 
                VerticalAlignment="Top"
                Width="22" 
                Source="password.png" 
@@ -114,7 +115,7 @@
         <Label Grid.ColumnSpan="2" 
                Content="Login to your account" 
                HorizontalAlignment="Left"
-               Margin="315,142,0,0" 
+               Margin="430,118,0,0" 
                VerticalAlignment="Top" 
                Width="167" FontSize="16" Foreground="#695CD5"/>
 
@@ -125,7 +126,7 @@
                 BorderThickness="0"
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Left"
-                Margin="345,384,0,0" 
+                Margin="475,384,0,0" 
                 VerticalAlignment="Top" />
 
 

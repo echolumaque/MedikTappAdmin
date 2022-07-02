@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediktapAdmin"
         mc:Ignorable="d"
-        Title="AddEditService" Height="216.996" Width="434.486"
+        Title="AddEditService" Height="480" Width="720"
         ResizeMode="NoResize"
         WindowStyle="ToolWindow" 
         WindowStartupLocation="CenterScreen">
-    <Grid Height="185"
+    <Grid Height="260"
           VerticalAlignment="Top" 
           HorizontalAlignment="Left"
-          Width="418"
+          Width="699"
           Margin="6,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -20,26 +20,24 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="txtservicename" 
                  HorizontalAlignment="Left" 
-                 Height="23" Margin="153,28,0,0"
+                 Height="23" Margin="264,69,0,0"
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
-                 Width="246" Grid.ColumnSpan="2"/>
+                 Width="246"/>
         <TextBox x:Name="txtservicedescription" 
                  HorizontalAlignment="Left" Height="23"
-                 Margin="153,68,0,0" TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="246"
-                 Grid.ColumnSpan="2"/>
+                 Margin="264,109,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="246"/>
         <TextBox x:Name="txtserviceprice"
                  HorizontalAlignment="Left"
-                 Height="23" Margin="153,107,0,0"
+                 Height="23" Margin="264,148,0,0"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
-                 Width="246" 
-                 Grid.ColumnSpan="2"/>
+                 Width="246"/>
         <Button x:Name="btnsaveservice" 
                 Content="Save" 
                 HorizontalAlignment="Left" 
-                Margin="30,0,0,19" 
+                Margin="334,0,0,41" 
                 Width="104" 
                 BorderThickness="0"
                 Height="20" VerticalAlignment="Bottom" 
@@ -48,15 +46,15 @@
                 Foreground="White"/>
         <Label Content="Service Name"
                HorizontalAlignment="Left"
-               Margin="10,25,0,0" 
+               Margin="129,74,0,0" 
                VerticalAlignment="Top"/>
         <Label Content="Service Description" 
                HorizontalAlignment="Left" 
-               Margin="10,65,0,0"
+               Margin="129,114,0,0"
                VerticalAlignment="Top"/>
         <Label Content="Service Price" 
                HorizontalAlignment="Left" 
-               Margin="10,104,0,0" 
+               Margin="129,153,0,0" 
                VerticalAlignment="Top"/>
 
     </Grid>
