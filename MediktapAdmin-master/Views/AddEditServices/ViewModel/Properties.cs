@@ -10,5 +10,6 @@ namespace MediktapAdmin.Views.AddEditServices
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
         public double ServicePrice { get; set; }
+        public ICommand ClearFieldsCmd { get; }
     }
 }

@@ -2,7 +2,7 @@
 using MediktapAdmin.Models;
 using Refit;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace MedikTapp.Services.HttpService
 {
@@ -16,10 +16,8 @@ namespace MedikTapp.Services.HttpService
                 new RefitSettings(new SystemTextJsonContentSerializer()));
         }
 
-        public ConfiguredTaskAwaitable<IEnumerable<Service>> GetServices() =>
-            _medikTappApi.GetService().ConfigureAwait(false);
+        public Task<IEnumerable<Service>> GetServices() => _medikTappApi.GetService();
 
-        public ConfiguredTaskAwaitable AddService(Service service) =>
-            _medikTappApi.AddService(service).ConfigureAwait(false);
+        public Task AddService(Service service) => _medikTappApi.AddService(service);
     }
 }
