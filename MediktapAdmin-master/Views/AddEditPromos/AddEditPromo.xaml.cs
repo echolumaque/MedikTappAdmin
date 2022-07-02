@@ -1,10 +1,11 @@
-﻿using System.Windows;
+﻿using MediktapAdmin.Templates;
+using MediktapAdmin.Views.AddEditPromos.ViewModel;
 
 namespace MediktapAdmin.Views.AddEditPromos
 {
-    public partial class AddEditPromo : Window
+    public partial class AddEditPromo : BaseWindow<AddEditPromoViewModel>
     {
-        public AddEditPromo()
+        public AddEditPromo(AddEditPromoViewModel vm) : base(vm)
         {
             InitializeComponent();
         }

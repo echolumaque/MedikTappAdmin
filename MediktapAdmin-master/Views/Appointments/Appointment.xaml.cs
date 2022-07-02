@@ -1,10 +1,11 @@
-﻿using System.Windows;
+﻿using MediktapAdmin.Templates;
+using MediktapAdmin.Views.Appointments.ViewModel;
 
 namespace MediktapAdmin.Views.Appointments
 {
-    public partial class Appointment : Window
+    public partial class Appointment : BaseWindow<AppointmentViewModel>
     {
-        public Appointment()
+        public Appointment(AppointmentViewModel vm) : base(vm)
         {
             InitializeComponent();
         }

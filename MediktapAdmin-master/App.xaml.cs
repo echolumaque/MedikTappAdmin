@@ -1,5 +1,9 @@
 ﻿using MediktapAdmin.Services.NavigationService;
+using MediktapAdmin.Views.AddEditPromos;
+using MediktapAdmin.Views.AddEditPromos.ViewModel;
 using MediktapAdmin.Views.AddEditServices;
+using MediktapAdmin.Views.Appointments;
+using MediktapAdmin.Views.Appointments.ViewModel;
 using MediktapAdmin.Views.MainWindows;
 using MediktapAdmin.Views.MedikTappMenus;
 using MedikTapp.Services.HttpService;
@@ -23,7 +27,7 @@ namespace MediktapAdmin
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Current.MainWindow = new AddEditService(ActivatorUtilities.CreateInstance<AddEditServiceViewModel>(ServiceProvider));
+            Current.MainWindow = new Appointment(ActivatorUtilities.CreateInstance<AppointmentViewModel>(ServiceProvider));
             Current.MainWindow.Show();
         }
 
@@ -33,6 +37,8 @@ namespace MediktapAdmin
                 .AddSingleton<HttpService>()
 
                 .AddTransient<MainWindowViewModel>()
+                .AddTransient<AddEditPromoViewModel>()
+                .AddTransient<AppointmentViewModel>()
                 .AddTransient<AddEditServiceViewModel>()
                 .AddTransient<MedikTappMenuViewModel>();
         }

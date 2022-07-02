@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants\MedikTappRemoteKeys.cs" />
+    <Compile Include="Models\ServicesWithId.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Services\HttpService\HttpService.cs" />
     <Compile Include="Services\HttpService\IMedikTappApi.cs" />
@@ -69,6 +70,9 @@
     <Compile Include="Views\AddEditPromos\AddEditPromo.xaml.cs">
       <DependentUpon>AddEditPromo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddEditPromos\ViewModel\AddEditPromoViewModel.cs" />
+    <Compile Include="Views\AddEditPromos\ViewModel\Methods.cs" />
+    <Compile Include="Views\AddEditPromos\ViewModel\Properties.cs" />
     <Compile Include="Views\AddEditServices\ViewModel\Properties.cs" />
     <Compile Include="Views\AddEditServices\ViewModel\Methods.cs" />
     <Compile Include="Views\AddEditServices\ViewModel\AddEditServiceViewModel.cs" />
@@ -78,12 +82,14 @@
     <Compile Include="Views\Appointments\Appointment.xaml.cs">
       <DependentUpon>Appointment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Appointments\Appointments.cs" />
+    <Compile Include="Models\Appointments.cs" />
+    <Compile Include="Views\Appointments\ViewModel\AppointmentViewModel.cs" />
+    <Compile Include="Views\Appointments\ViewModel\Properties.cs" />
     <Compile Include="Views\MainWindows\ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Views\MedikTappMenus\MedikTappMenu.xaml.cs">
       <DependentUpon>MedikTappMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddEditPromos\Promo.cs" />
+    <Compile Include="Models\Promo.cs" />
     <Compile Include="Views\MedikTappMenus\ViewModel\MedikTappMenuViewModel.cs" />
     <Compile Include="Views\Services\Service.cs" />
     <Compile Include="Views\Services\Services.xaml.cs">

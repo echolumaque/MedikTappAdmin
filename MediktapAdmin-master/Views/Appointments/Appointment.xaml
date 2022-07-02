@@ -1,10 +1,14 @@
-﻿<Window x:Class="MediktapAdmin.Views.Appointments.Appointment"
+﻿<view:BaseWindow x:Class="MediktapAdmin.Views.Appointments.Appointment"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:MediktapAdmin"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Appointment"
+        xmlns:view="clr-namespace:MediktapAdmin.Templates"
+        xmlns:vm="clr-namespace:MediktapAdmin.Views.Appointments.ViewModel"
+        x:TypeArguments="vm:AppointmentViewModel"
+        d:DataContext="{d:DesignInstance Type=vm:AppointmentViewModel}"
         Width="800"
         Height="450"
         WindowStartupLocation="CenterScreen"
@@ -16,12 +20,15 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Rectangle Width="210"
-                   Height="419"
+                   Height="429"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Fill="#695CD5"
                    Stroke="Black" />
+
         <Calendar x:Name="cal1"
+                  SelectedDate="{Binding SelectedAppointmentDate}"
+                  
                   Width="205"
                   Height="196"
                   HorizontalAlignment="Left"
@@ -29,7 +36,11 @@
                   Background="White"
                   FontSize="20"
                   Foreground="White" />
+
         <ComboBox x:Name="cbservices"
+                  ItemsSource="{Binding Services}"
+                  SelectedItem="{Binding SelectedService}"
+                  DisplayMemberPath="ServiceName"
                   Grid.ColumnSpan="2"
                   Width="582"
                   Margin="210,72,0,0"
@@ -42,6 +53,7 @@
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    LastChildFill="False">
+            
             <DataGrid x:Name="dtschedule"
                       Width="566"
                       Height="310"
@@ -63,4 +75,4 @@
                    VerticalAlignment="Top"
                    LastChildFill="False" />
     </Grid>
-</Window>
+</view:BaseWindow>

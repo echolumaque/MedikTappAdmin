@@ -1,4 +1,5 @@
 ﻿using MediktapAdmin.Models;
+using MediktapAdmin.Views.Appointments;
 using Refit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,6 +16,26 @@ namespace MedikTapp.Services.HttpService
         [Headers("x-functions-key : 6pEd_fiTFVTB3tR6OkjbgFW-OwHt4h38VlfV1br1NTAvAzFu_oeq-Q==")]
         [Post("/api/AddService")]
         Task AddService([Body(BodySerializationMethod.Serialized)] Service service);
+
+        [Headers("x-functions-key : Ag8-ptghu5s42DyQoR5ZqxA-_gjwlfv1_4QaHKHDRPTNAzFuFdMHCQ==")]
+        [Post("/api/AddPromo")]
+        
+        Task AddPromo ([Body(BodySerializationMethod.Serialized)] Promo promo);
+
+        [Headers("x-functions-key : l-RVwmtpSC3kNIhZqTrr1e9MGRLWEcf6G9y7DSEUepDCAzFuseNwWg==")]
+        [Get("/api/GetAppointmentsByServiceId?serviceId={serviceId}")]
+        Task<IEnumerable<Appointments>> GetAppointmentsByServiceId(int serviceId);
+
+        [Headers("x-functions-key : sonKK22hiVFI8H2W47BYLGTx7A_tb3mdSHUh_vDOtwS9AzFuhHPfSw==")]
+        [Get("/api/GetServiceNameAndId")]
+        Task<IEnumerable<ServicesWithId>> GetServiceNameAndId();
+
+
+
+        [Headers("x-functions-key : swcCdvqL0MMZ2gsSgwXAqEFSkbEtuvJ4Ip3-kMYeYma8AzFuDSJFGw==")]
+        [Get("/api/GetAppointmentsByDate?year={year}&month={month}&day={day}&hour={hour}")]
+        Task<IEnumerable<Appointments>> GetAppointmentsByDate(int year, int month, int day, int hour);
+
         #endregion
     }
 }
