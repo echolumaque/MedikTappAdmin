@@ -154,5 +154,11 @@
   <ItemGroup>
     <Resource Include="Assets\Mediktapp .png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Syringe.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

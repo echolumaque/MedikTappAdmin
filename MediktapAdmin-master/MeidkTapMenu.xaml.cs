@@ -35,5 +35,11 @@ namespace MediktapAdmin
             Appointment appointment = new Appointment();
             appointment.Show();
         }
+
+        private void helpIcon_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow helpWindow = new HelpWindow();
+            helpWindow.Show();
+        }
     }
 }

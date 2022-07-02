@@ -20,11 +20,29 @@
         <Button x:Name="btnservice" Content="Service" HorizontalAlignment="Left" Margin="0,264,0,0" 
                 VerticalAlignment="Top" Width="397" 
                 Height="155" Grid.ColumnSpan="2" Grid.Column="1" Click="btnservice_Click" FontSize="20"/>
-        <Image Source="C:/tmp/Mediktapp .png" Grid.ColumnSpan="2" Margin="288,53,67,175"/>
+        <Image Source="C:/tmp/Mediktapp .png"
+               Grid.ColumnSpan="2" Margin="288,53,67,175"
+               />
         <Label Content="Welcome to MedikTapp, Admin!" 
                HorizontalAlignment="Left" 
                Margin="139,0,0,0" VerticalAlignment="Top" 
                Grid.ColumnSpan="3" Width="515" FontSize="36"/>
+        <Button Grid.Column="2" HorizontalAlignment="Left" Margin="101,129,0,0" VerticalAlignment="Top"/>
+
+        <Button Grid.Column="2"
+                Margin="116,19,15,360"
+                BorderThickness="0"
+                Background="Transparent"
+                x:Name="helpIcon"
+                Click="helpIcon_Click">
+
+            <StackPanel Orientation="Horizontal">
+                <Image Source="C:/tmp/help.png"/>
+                
+            </StackPanel>
+            
+
+        </Button>
 
     </Grid>
 </Window>
