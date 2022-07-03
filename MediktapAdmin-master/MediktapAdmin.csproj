@@ -85,6 +85,10 @@
     <Compile Include="Models\Appointments.cs" />
     <Compile Include="Views\Appointments\ViewModel\AppointmentViewModel.cs" />
     <Compile Include="Views\Appointments\ViewModel\Properties.cs" />
+    <Compile Include="Views\HelpWindow\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelpWindow\ViewModel\HelpWindowViewModel.cs" />
     <Compile Include="Views\MainWindows\ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Views\MedikTappMenus\MedikTappMenu.xaml.cs">
       <DependentUpon>MedikTappMenu.xaml</DependentUpon>
@@ -104,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Appointments\Appointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HelpWindow\HelpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +199,8 @@
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\help.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

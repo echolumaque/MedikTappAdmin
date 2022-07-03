@@ -140,7 +140,7 @@
                FontSize="16"
                Foreground="#695CD5" />
         <Image Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="61,59,0,0" VerticalAlignment="Top" Width="100"/>
-        
+
         <Image HorizontalAlignment="Left" 
                Source="C:/tmp/Mediktapp .png"
                Height="100" 
@@ -148,5 +148,15 @@
                VerticalAlignment="Top" 
                Width="100" 
                Grid.Column="2"/>
+        
+        <Button Grid.Column="2" 
+                Background="Transparent"
+                Foreground="#695CD5"
+                BorderThickness="0"
+                Command="{Binding helpCmd}"
+                Content="Do you need help?" 
+                HorizontalAlignment="Left"
+                Margin="40,389,0,0" 
+                VerticalAlignment="Top"/>
     </Grid>
 </view:BaseWindow>

@@ -43,6 +43,7 @@
                 FontSize="20" />
 
         <Image Grid.ColumnSpan="2"
+               
                Margin="288,53,67,175" />
 
         <Label Grid.ColumnSpan="3"
@@ -52,6 +53,25 @@
                VerticalAlignment="Top"
                Content="Welcome to MedikTapp, Admin!"
                FontSize="36" />
+
+        <Button Grid.Column="2"
+                HorizontalAlignment="Left" 
+                BorderThickness="0"
+                Background="Transparent"
+                Margin="111,9,0,0"
+                Command="{Binding helpCmd}"
+                VerticalAlignment="Top">
+
+            <StackPanel Orientation="Horizontal">
+                <Image 
+               Source="/Assets/help.png" Height="33" Width="71"
+               />
+
+            </StackPanel>
+        </Button>
+
+
+
 
     </Grid>
 </views:BaseWindow>
