@@ -11,15 +11,21 @@
         d:DataContext="{d:DesignInstance Type=vm:HelpWindowViewModel}"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        WindowStyle="ToolWindow"
         Title="HelpWindow" 
-        Height="150" Width="370">
+        Height="150" 
+        Width="375">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
         <Label Content="Please drop a message at MedikTapp@gmail.com"
                
                HorizontalAlignment="Left"
-               Margin="10,54,0,0" 
+               Margin="15,59,0,0" 
                FontSize="15"
-               VerticalAlignment="Top"/>
+               VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
     </Grid>
 </view:BaseWindow>

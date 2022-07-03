@@ -28,7 +28,6 @@
 
         <Calendar x:Name="cal1"
                   SelectedDate="{Binding SelectedAppointmentDate}"
-                  
                   Width="205"
                   Height="196"
                   HorizontalAlignment="Left"

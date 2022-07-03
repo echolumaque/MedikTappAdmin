@@ -28,6 +28,9 @@ namespace MedikTapp.Services.HttpService
 
         public Task AddPromo(Promo promo) => _medikTappApi.AddPromo(promo);
 
+        Task DeleteService(Service service) => _medikTappApi.DeleteService(service);
+        Task EditService(Service service) => _medikTappApi.DeleteService(service);
+
         public  Task<IEnumerable<Appointments>>  GetAppointmentsByServiceId(int serviceId) =>
             _medikTappApi.GetAppointmentsByServiceId(serviceId);
 

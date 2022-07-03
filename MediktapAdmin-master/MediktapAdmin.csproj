@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants\MedikTappRemoteKeys.cs" />
+    <Compile Include="Models\MessageReturn.cs" />
     <Compile Include="Models\ServicesWithId.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Services\HttpService\HttpService.cs" />
@@ -95,10 +96,10 @@
     </Compile>
     <Compile Include="Models\Promo.cs" />
     <Compile Include="Views\MedikTappMenus\ViewModel\MedikTappMenuViewModel.cs" />
-    <Compile Include="Views\Services\Service.cs" />
     <Compile Include="Views\Services\Services.xaml.cs">
       <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Services\ViewModel\ServiceViewModel.cs" />
     <Page Include="Views\AddEditPromos\AddEditPromo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,5 +203,9 @@
   <ItemGroup>
     <Resource Include="Assets\help.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\docImage.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

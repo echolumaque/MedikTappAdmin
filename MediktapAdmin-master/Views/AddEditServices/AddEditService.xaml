@@ -6,7 +6,7 @@
                  xmlns:view="clr-namespace:MediktapAdmin.Templates"
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.AddEditServices"
                  Title="Add or Edit MedikTapp's service"
-                 Width="1280"
+                 Width="1110"
                  Height="720"
                  d:DataContext="{d:DesignInstance Type=vm:AddEditServiceViewModel}"
                  x:TypeArguments="vm:AddEditServiceViewModel"
@@ -15,7 +15,7 @@
                  WindowStyle="ThreeDBorderWindow"
                  mc:Ignorable="d">
 
-    <Grid Width="1190"
+    <Grid Width="990"
           Height="720"
           Margin="40,-50,40,0">
         <Grid.ColumnDefinitions>
@@ -89,7 +89,7 @@
                  TextWrapping="Wrap" />
 
         <Button Grid.Row="2"
-                Grid.Column="2"
+                Grid.Column="1"
                 Padding="20"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
@@ -98,19 +98,19 @@
                 Command="{Binding ClearFieldsCmd}"
                 Content="Clear Fields"
                 FontSize="20"
-                Foreground="#695CD5" />
+                Foreground="#695CD5" Grid.ColumnSpan="2" Margin="236,0,0,0" />
 
         <Button Grid.Row="2"
                 Grid.Column="2"
                 Padding="20"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Background="White"
                 BorderThickness="0"
                 Command="{Binding OpenImageCmd}"
                 Content="Open Image"
                 FontSize="20"
-                Foreground="#695CD5" />
+                Foreground="#695CD5" Margin="38,0,0,0" />
 
         <Button Grid.Row="2"
                 Grid.Column="2"

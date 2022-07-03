@@ -9,6 +9,7 @@ namespace MediktapAdmin.Views.MedikTappMenus
     {
         public MedikTappMenuViewModel(NavigationService navigationService) : base(navigationService)
         {
+            GotoAppointmentsCmd = new Command(() => NavigationService.Goto<Appointments.Appointment>());
             GotoServicesCmd = new Command(() => NavigationService.Goto<Services.Services>());
             helpCmd = new Command(() => NavigationService.Goto<HelpWindow.HelpWindow>());
         }

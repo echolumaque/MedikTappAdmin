@@ -23,6 +23,7 @@
 
         <Button Width="395"
                 Height="155"
+                Command="{Binding GotoAppointmentsCmd}"
                 Margin="0,264,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
@@ -69,6 +70,11 @@
 
             </StackPanel>
         </Button>
+
+        <Image Stretch="Uniform"
+               Source="/Assets/docImage.png"
+               Grid.ColumnSpan="2"
+               Margin="315,62,54,192"/>
 
 
 

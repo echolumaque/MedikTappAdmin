@@ -8,6 +8,7 @@
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.AddEditPromos.ViewModel"
                  Width="850"
                  Height="440"
+                 Icon="/Assets/mediktapp.png"
                  ResizeMode="NoResize"
                  x:TypeArguments="vm:AddEditPromoViewModel"
                  d:DataContext="{d:DesignInstance Type=vm:AddEditPromoViewModel}"
@@ -108,7 +109,7 @@
         <Image HorizontalAlignment="Left" 
                Source="/Assets/mediktapp.png"
                Height="53"
-               Margin="30,14,0,0" 
+               Margin="50,6,0,0" 
                VerticalAlignment="Top"
                Width="65"/>
 

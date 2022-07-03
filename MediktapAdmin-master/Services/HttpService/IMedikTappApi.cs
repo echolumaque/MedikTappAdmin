@@ -36,6 +36,16 @@ namespace MedikTapp.Services.HttpService
         [Get("/api/GetAppointmentsByDate?year={year}&month={month}&day={day}&hour={hour}")]
         Task<IEnumerable<Appointments>> GetAppointmentsByDate(int year, int month, int day, int hour);
 
+
+        [Headers("x-functions-key : yls6-YZr6d8GgD4D1pUMULYyjdpiZY8JMGj__pF_di_VAzFuggSIOQ==")]
+        [Get("api/DeleteService")]
+        Task DeleteService(Service service);
+
+        [Headers("x-functions-key : noUdbqHzFatCfmP_lbBBfYTMTXNZGU2Im_uSe2OLylE0AzFu-wIEFw==")]
+        [Get("api/EditService")]
+        Task EditService(Service service);
+
+
         #endregion
     }
 }

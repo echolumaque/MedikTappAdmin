@@ -41,8 +41,11 @@ namespace MediktapAdmin.Views.AddEditPromos.ViewModel
 
             await _httpService.AddPromo(new Promo
             {
+                
                 PromoDescription = PromoDesrcripton,
                 PromoName = PromoName,
+                StartDate = DateTime.Now,
+                EndDate = DateTime.Now,
                 PromoImage = Convert.ToBase64String(_memoryStream.ToArray()),
                 PromoPrice = PromoPrice
             }).ConfigureAwait(false);

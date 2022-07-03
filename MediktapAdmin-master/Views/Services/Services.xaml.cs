@@ -1,14 +1,14 @@
-﻿using System.Windows;
+﻿using MediktapAdmin.Templates;
+using MediktapAdmin.Views.Services.ViewModel;
 
 namespace MediktapAdmin.Views.Services
 {
-    public partial class Services : Window
+    public partial class Services : BaseWindow<ServiceViewModel>
     {
-        public Services()
+        public Services(ServiceViewModel vm) : base(vm)
         {
             InitializeComponent();
-            servicetab.Width = (this.Width / 2) - 10;
-            promotab.Width = (this.Width / 2) - 10;
+           
         }
     }
 }
