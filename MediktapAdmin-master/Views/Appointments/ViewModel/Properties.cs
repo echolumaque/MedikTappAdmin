@@ -1,11 +1,7 @@
 ﻿using MediktapAdmin.Models;
 using PropertyChanged;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediktapAdmin.Views.Appointments.ViewModel
 {
@@ -18,7 +14,6 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
 
         [OnChangedMethod(nameof(SelectedAppointmentDateChanged))]
         public DateTime SelectedAppointmentDate { get; set; }
-
-     
+        public ObservableCollection<AppointmentsWithPatientId> AppointmentsWithPatientId { get; set; }
     }
 }

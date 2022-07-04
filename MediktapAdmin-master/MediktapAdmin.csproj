@@ -3,6 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,7 +12,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MediktapAdmin</RootNamespace>
     <AssemblyName>MediktapAdmin</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -64,7 +65,10 @@
     <Compile Include="Models\Service.cs" />
     <Compile Include="Services\HttpService\HttpService.cs" />
     <Compile Include="Services\HttpService\IMedikTappApi.cs" />
+    <Compile Include="Services\NavigationService\NavigationParameters.cs" />
+    <Compile Include="Services\NavigationService\NavigationParametersExtensions.cs" />
     <Compile Include="Services\NavigationService\NavigationService.cs" />
+    <Compile Include="Services\NavigationService\NavigationUtilities.cs" />
     <Compile Include="Templates\BaseWindow.cs" />
     <Compile Include="Templates\Command.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
@@ -195,7 +199,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\img-placeholder.png" />
+    <EmbeddedResource Include="Assets\img-placeholder.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />

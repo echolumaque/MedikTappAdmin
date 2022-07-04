@@ -11,13 +11,13 @@ namespace MediktapAdmin.Views.MainWindows
 
         public MainWindowViewModel(NavigationService navigationService) : base(navigationService)
         {
-            LoginCmd = new Command(() => NavigationService.Goto<MedikTappMenu>());
+            LoginCmd = new Command(() => NavigationService.GoTo<MedikTappMenu>());
 
-            helpCmd = new Command(() => NavigationService.Goto<HelpWindow.HelpWindow>());
+            helpCmd = new Command(() => NavigationService.GoTo<HelpWindow.HelpWindow>());
         }
 
         public ICommand helpCmd { get; set; }
         public ICommand LoginCmd { get; }
-       
+
     }
 }

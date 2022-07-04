@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace MediktapAdmin.Views.AddEditPromos.ViewModel
 {
@@ -10,10 +11,10 @@ namespace MediktapAdmin.Views.AddEditPromos.ViewModel
         public ICommand ClearFieldsCmd { get; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public string PromoImage { get; set; } = "/Assets/img-placeholder.png";
-        public string PromoDesrcripton { get; set; }
+        public ImageSource PromoImage { get; set; }
+        public string PromoDescription { get; set; }
         public double PromoPrice { get; set; }
         public string PromoName { get; set; }
-
+        public string AddEditPromoText { get; set; }
     }
 }

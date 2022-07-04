@@ -90,6 +90,8 @@
 
         <Button Grid.Row="2"
                 Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="236,0,0,0"
                 Padding="20"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
@@ -98,10 +100,11 @@
                 Command="{Binding ClearFieldsCmd}"
                 Content="Clear Fields"
                 FontSize="20"
-                Foreground="#695CD5" Grid.ColumnSpan="2" Margin="236,0,0,0" />
+                Foreground="#695CD5" />
 
         <Button Grid.Row="2"
                 Grid.Column="2"
+                Margin="38,0,0,0"
                 Padding="20"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
@@ -110,7 +113,7 @@
                 Command="{Binding OpenImageCmd}"
                 Content="Open Image"
                 FontSize="20"
-                Foreground="#695CD5" Margin="38,0,0,0" />
+                Foreground="#695CD5" />
 
         <Button Grid.Row="2"
                 Grid.Column="2"
@@ -120,8 +123,8 @@
                 VerticalAlignment="Center"
                 Background="#695CD5"
                 BorderThickness="0"
-                Command="{Binding AddServiceCmd}"
-                Content="Add Service"
+                Command="{Binding AddSOrEditerviceCmd}"
+                Content="{Binding AddEditServiceText}"
                 FontSize="20"
                 Foreground="White" />
 

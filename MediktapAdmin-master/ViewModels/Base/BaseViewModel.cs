@@ -12,13 +12,16 @@ namespace MediktapAdmin.ViewModels.Base
 
         protected NavigationService NavigationService { get; }
 
-        public virtual void OnContentRendered() { }
-
-        public virtual void OnClosed() { }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        public virtual void OnNavigatedFrom(NavigationParameters parameters) { }
+
+        public virtual void OnNavigatedTo(NavigationParameters parameters) { }
+
+        public virtual void SetBindings(NavigationParameters parameters) { }
     }
 }

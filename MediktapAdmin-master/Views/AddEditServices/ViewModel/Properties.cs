@@ -1,15 +1,17 @@
 ﻿using System.Windows.Input;
+using System.Windows.Media;
 
 namespace MediktapAdmin.Views.AddEditServices
 {
     public partial class AddEditServiceViewModel
     {
-        public ICommand AddServiceCmd { get; }
+        public ICommand AddSOrEditerviceCmd { get; }
         public ICommand OpenImageCmd { get; }
-        public string ServiceImage { get; set; } = "/Assets/img-placeholder.png";
+        public ImageSource ServiceImage { get; set; }
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
         public double ServicePrice { get; set; }
         public ICommand ClearFieldsCmd { get; }
+        public string AddEditServiceText { get; set; }
     }
 }

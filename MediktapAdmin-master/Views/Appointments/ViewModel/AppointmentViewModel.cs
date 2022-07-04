@@ -1,11 +1,9 @@
-﻿using MediktapAdmin.Services.NavigationService;
+﻿using MediktapAdmin.Models;
+using MediktapAdmin.Services.NavigationService;
 using MediktapAdmin.ViewModels.Base;
 using MedikTapp.Services.HttpService;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace MediktapAdmin.Views.Appointments.ViewModel
 {
@@ -16,30 +14,32 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
         public AppointmentViewModel(NavigationService navigationService, HttpService httpService) : base(navigationService)
         {
             _httpService = httpService;
-            
+
         }
 
-        public  override  async void OnContentRendered()
+        public override async void OnNavigatedTo(NavigationParameters parameters)
         {
-            Services = new System.Collections.ObjectModel.ObservableCollection<Models.ServicesWithId>(await _httpService.GetServiceNameAndId());
-
+            Services = new ObservableCollection<ServicesWithId>(await _httpService.GetServiceNameAndId());
         }
+
 
         private async void SelectedServiceChanged()
         {
-            
-            var test = await _httpService.GetAppointmentsByServiceId(SelectedService.ServiceId);
+            var appointmentsBasedOnService = await _httpService.GetAppointmentsByServiceId(SelectedService.ServiceId);
 
+            var listOfIds = new List<int>();
+            foreach (var item in appointmentsBasedOnService)
+                listOfIds.Add(item.PatientId);
+
+            AppointmentsWithPatientId = new ObservableCollection<AppointmentsWithPatientId>
+                (await _httpService.GetPatientAppointmentsBasedOnServiceId(SelectedService.ServiceId));
         }
 
         private async void SelectedAppointmentDateChanged()
         {
-            var test = await _httpService.GetAppointmentsByDate(SelectedAppointmentDate.Year, SelectedAppointmentDate.Month
-                , SelectedAppointmentDate.Day, 7);
+            AppointmentsWithPatientId = new ObservableCollection<AppointmentsWithPatientId>
+                (await _httpService.GetPatientAppointmentsBasedOnServiceIdAndDate(SelectedService.ServiceId,
+                SelectedAppointmentDate.Year, SelectedAppointmentDate.Month, SelectedAppointmentDate.Day));
         }
-
-        
-        
-
     }
 }
