@@ -1,5 +1,6 @@
 ﻿using MediktapAdmin.Templates;
 using MediktapAdmin.Views.AddEditPromos.ViewModel;
+using System.Windows.Navigation;
 
 namespace MediktapAdmin.Views.AddEditPromos
 {

@@ -95,5 +95,16 @@ namespace MediktapAdmin.Views.Services.ViewModel
             await _httpService.DeletePromo(SelectedPromo.PromoId);
             Promos = new ObservableCollection<Promo>(await _httpService.GetPromos());
         }
+
+        public override void OnNavigatedFrom(NavigationParameters parameters)
+        {
+            Services = new()
+            {
+                new()
+                {
+                    ServiceImage = "/Assets/docImage.png",
+                }
+            };
+        }
     }
 }

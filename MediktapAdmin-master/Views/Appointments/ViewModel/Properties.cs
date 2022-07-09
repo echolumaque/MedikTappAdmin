@@ -13,7 +13,8 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
         public ServicesWithId SelectedService { get; set; }
 
         [OnChangedMethod(nameof(SelectedAppointmentDateChanged))]
-        public DateTime SelectedAppointmentDate { get; set; }
+        public DateTime SelectedAppointmentDate { get; set; } = DateTime.Today;
         public ObservableCollection<AppointmentsWithPatientId> AppointmentsWithPatientId { get; set; }
+        public DateTime StartDate => DateTime.Now.Date;
     }
 }

@@ -8,6 +8,7 @@
         xmlns:vm="clr-namespace:MediktapAdmin.Views.HelpWindow.ViewModel"
         x:TypeArguments="vm:HelpWindowViewModel"
         WindowStartupLocation="CenterScreen"
+        Icon="/Assets/mediktapp.png"
         d:DataContext="{d:DesignInstance Type=vm:HelpWindowViewModel}"
         mc:Ignorable="d"
         ResizeMode="NoResize"
@@ -27,5 +28,17 @@
                FontSize="15"
                VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
+        <Button Command="{Binding GoBackCmd}"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderThickness="0"
+                Margin="34,22,0,0" 
+                VerticalAlignment="Top">
+
+            <StackPanel/>
+        </Button>
+        <Image Source="/Assets/purple-arrow.png" 
+                       Margin="0,-5,89,110"
+                       />
     </Grid>
 </view:BaseWindow>

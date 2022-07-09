@@ -7,6 +7,7 @@ namespace MediktapAdmin.Views.AddEditServices
     {
         public ICommand AddSOrEditerviceCmd { get; }
         public ICommand OpenImageCmd { get; }
+        public ICommand BackButtonCmd { get; }
         public ImageSource ServiceImage { get; set; }
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }

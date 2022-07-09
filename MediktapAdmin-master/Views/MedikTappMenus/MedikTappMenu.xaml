@@ -7,6 +7,7 @@
                   xmlns:vm="clr-namespace:MediktapAdmin.Views.MedikTappMenus"
                   Title="MedikTapp Menu"
                   Width="800"
+                  Icon="/Assets/mediktapp.png"
                   Height="450"
                   d:DataContext="{d:DesignInstance Type=vm:MedikTappMenuViewModel}"
                   x:TypeArguments="vm:MedikTappMenuViewModel"
@@ -75,9 +76,6 @@
                Source="/Assets/docImage.png"
                Grid.ColumnSpan="2"
                Margin="315,62,54,192"/>
-
-
-
 
     </Grid>
 </views:BaseWindow>

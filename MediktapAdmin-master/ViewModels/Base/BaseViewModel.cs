@@ -1,5 +1,7 @@
 ﻿using MediktapAdmin.Services.NavigationService;
+using MediktapAdmin.Templates;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace MediktapAdmin.ViewModels.Base
 {
@@ -8,6 +10,7 @@ namespace MediktapAdmin.ViewModels.Base
         public BaseViewModel(NavigationService navigationService)
         {
             NavigationService = navigationService;
+            GoBackCmd = new Command(() => navigationService.GoBack()); 
         }
 
         protected NavigationService NavigationService { get; }
@@ -23,5 +26,6 @@ namespace MediktapAdmin.ViewModels.Base
         public virtual void OnNavigatedTo(NavigationParameters parameters) { }
 
         public virtual void SetBindings(NavigationParameters parameters) { }
+        public ICommand GoBackCmd { get;  }
     }
 }

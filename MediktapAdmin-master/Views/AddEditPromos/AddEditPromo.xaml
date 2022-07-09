@@ -54,6 +54,7 @@
                  TextWrapping="Wrap" />
 
         <Button Grid.Column="6"
+                
                 Width="89"
                 Height="25"
                 Margin="30,349,0,0"
@@ -117,10 +118,12 @@
 
         <Image Width="65"
                Height="53"
-               Margin="50,6,0,0"
+               Margin="103,11,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Source="/Assets/mediktapp.png" />
+               Source="/Assets/mediktapp.png" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="3" />
 
         <Button Grid.Column="2"
                 Grid.ColumnSpan="3"
@@ -155,6 +158,26 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Source="{Binding PromoImage}" />
+
+
+        <Button Command="{Binding GoBackCmd}"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderThickness="0"
+                VerticalAlignment="Top">
+
+            <StackPanel>
+                <Image Source="/Assets/purple-arrow.png" 
+                       Height="31" 
+                       Width="40"
+                      />
+            </StackPanel>
+        </Button>
+
+
+    
+
+
 
     </Grid>
 </view:BaseWindow>

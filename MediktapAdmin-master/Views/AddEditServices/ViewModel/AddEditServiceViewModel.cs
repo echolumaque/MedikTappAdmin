@@ -21,6 +21,7 @@ namespace MediktapAdmin.Views.AddEditServices
         {
             _httpService = httpService;
 
+            
             AddSOrEditerviceCmd = new Command(async () => await AddOrEditService());
             OpenImageCmd = new Command(OpenImage);
             ClearFieldsCmd = new Command(() =>

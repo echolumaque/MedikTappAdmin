@@ -25,7 +25,16 @@ namespace MediktapAdmin.Services.NavigationService
 
         private void PerformNavigationEvents(Window currentWindow, Window destinationWindow)
         {
-            currentWindow.Close();
+            currentWindow.Hide();
+            destinationWindow.Show();
+        }
+
+        public void GoBack()
+        {
+            var windows = Application.Current.Windows.OfType<Window>().ToList();
+            var indexOfCurrentWindow = windows.IndexOf(GetCurrentWindow());
+            var destinationWindow = windows[indexOfCurrentWindow - 2];
+            windows[indexOfCurrentWindow].Close();
             destinationWindow.Show();
         }
     }

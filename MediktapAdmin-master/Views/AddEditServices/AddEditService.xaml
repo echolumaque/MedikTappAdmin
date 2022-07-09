@@ -8,6 +8,7 @@
                  Title="Add or Edit MedikTapp's service"
                  Width="1110"
                  Height="720"
+                 Icon="/Assets/mediktapp.png"
                  d:DataContext="{d:DesignInstance Type=vm:AddEditServiceViewModel}"
                  x:TypeArguments="vm:AddEditServiceViewModel"
                  ResizeMode="NoResize"
@@ -30,10 +31,10 @@
         </Grid.RowDefinitions>
 
         <Image Grid.Row="0"
-               Grid.Column="0"
+               Grid.Column="1"
                Width="100"
                Height="100"
-               Margin="10,0,0,0"
+               Margin="145,66,0,74"
                HorizontalAlignment="Left"
                Source="/Assets/mediktapp.png" />
 
@@ -136,5 +137,23 @@
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                Source="{Binding ServiceImage}" />
+
+
+        <Button Command="{Binding GoBackCmd}"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderThickness="0"
+                Margin="34,22,0,0" 
+                VerticalAlignment="Top">
+
+            <StackPanel>
+                <Image Source="/Assets/purple-arrow.png" 
+                       Height="54"
+                       Width="60" 
+                       Margin="-70,20,0,0"
+                       />
+            </StackPanel>
+        </Button>
+       
     </Grid>
 </view:BaseWindow>

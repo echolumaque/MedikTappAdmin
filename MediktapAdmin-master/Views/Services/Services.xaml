@@ -676,13 +676,24 @@
                      Style="{DynamicResource TabItemStyle1}">
 
                 <ListView ItemsSource="{Binding Services}"
+                          
                           SelectedItem="{Binding SelectedService}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock FontSize="20"
-                                       Text="{Binding ServiceName}" />
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding ServiceImage}"/>
+                                <TextBlock FontSize="20"
+                                       Text="{Binding ServiceName}"  />
+
+                            </StackPanel>
+
+
                         </DataTemplate>
+
                     </ListView.ItemTemplate>
+
+
+
                 </ListView>
             </TabItem>
 
@@ -694,6 +705,8 @@
                           SelectedItem="{Binding SelectedPromo}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
+
+
                             <TextBlock FontSize="20"
                                        Text="{Binding PromoName}" />
                         </DataTemplate>
@@ -741,5 +754,26 @@
                     FontSize="15"
                     Foreground="White" />
         </StackPanel>
+
+        <Button Command="{Binding GoBackCmd}"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+               
+                BorderThickness="0"
+                VerticalAlignment="Top">
+
+            <StackPanel>
+                <Image Source="/Assets/purple-arrow.png" 
+                       Height="54"
+                       Width="60" 
+                       Margin="0,0,0,0"
+                      />
+            </StackPanel>
+            
+        </Button>
+        
+
+
+
     </Grid>
 </view:BaseWindow>

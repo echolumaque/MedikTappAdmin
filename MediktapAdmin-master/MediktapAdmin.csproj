@@ -210,6 +210,22 @@
   <ItemGroup>
     <Resource Include="Assets\docImage.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\checkup.png" />
+    <Resource Include="Assets\covid test.png" />
+    <Resource Include="Assets\kidney.png" />
+    <Resource Include="Assets\liver.png" />
+    <Resource Include="Assets\pregnant.png" />
+    <Resource Include="Assets\urine test.png" />
+    <Resource Include="Assets\xray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\back-arrow.png" />
+    <Resource Include="Assets\arrow-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\purple-arrow.png" />
+    <Resource Include="Assets\purple-arrow1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

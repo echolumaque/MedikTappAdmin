@@ -8,6 +8,7 @@
                  Title="MedikTap Admin - Login"
                  Width="854"
                  Height="480" 
+                 Icon="/Assets/mediktapp.png"
                  ResizeMode="NoResize"
                  d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
                  x:TypeArguments="vm:MainWindowViewModel"
@@ -89,6 +90,7 @@
                VerticalAlignment="Top"
                BorderThickness="0"
                Content="Password"
+               
                Foreground="#695CD5" />
 
         <Rectangle Grid.ColumnSpan="2"
