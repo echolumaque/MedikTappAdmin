@@ -16,5 +16,7 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
         public DateTime SelectedAppointmentDate { get; set; } = DateTime.Today;
         public ObservableCollection<AppointmentsWithPatientId> AppointmentsWithPatientId { get; set; }
         public DateTime StartDate => DateTime.Now.Date;
+        public bool isOnBehalf { get; set; }
+        public string ProspectName { get; set; }
     }
 }

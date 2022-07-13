@@ -7,10 +7,10 @@
                   xmlns:vm="clr-namespace:MediktapAdmin.Views.MedikTappMenus"
                   Title="MedikTapp Menu"
                   Width="800"
-                  Icon="/Assets/mediktapp.png"
                   Height="450"
                   d:DataContext="{d:DesignInstance Type=vm:MedikTappMenuViewModel}"
                   x:TypeArguments="vm:MedikTappMenuViewModel"
+                  Icon="/Assets/mediktapp.png"
                   WindowStartupLocation="CenterScreen"
                   WindowStyle="ToolWindow"
                   mc:Ignorable="d">
@@ -24,14 +24,16 @@
 
         <Button Width="395"
                 Height="155"
-                Command="{Binding GotoAppointmentsCmd}"
                 Margin="0,264,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="#695CD5"
                 BorderBrush="#695CD5"
+                Command="{Binding GotoAppointmentsCmd}"
                 Content="Appointment"
-                FontSize="20" />
+                FontFamily="Poppins"
+                FontSize="20"
+                FontWeight="SemiBold" />
 
         <Button Grid.Column="1"
                 Grid.ColumnSpan="2"
@@ -42,10 +44,11 @@
                 VerticalAlignment="Top"
                 Command="{Binding GotoServicesCmd}"
                 Content="Service"
-                FontSize="20" />
+                FontFamily="Poppins"
+                FontSize="20"
+                FontWeight="SemiBold" />
 
         <Image Grid.ColumnSpan="2"
-               
                Margin="288,53,67,175" />
 
         <Label Grid.ColumnSpan="3"
@@ -54,28 +57,29 @@
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Welcome to MedikTapp, Admin!"
+               FontFamily="Poppins "
                FontSize="36" />
 
         <Button Grid.Column="2"
-                HorizontalAlignment="Left" 
-                BorderThickness="0"
-                Background="Transparent"
                 Margin="111,9,0,0"
-                Command="{Binding helpCmd}"
-                VerticalAlignment="Top">
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                BorderThickness="0"
+                Command="{Binding helpCmd}">
 
             <StackPanel Orientation="Horizontal">
-                <Image 
-               Source="/Assets/help.png" Height="33" Width="71"
-               />
+                <Image Width="71"
+                       Height="33"
+                       Source="/Assets/help.png" />
 
             </StackPanel>
         </Button>
 
-        <Image Stretch="Uniform"
+        <Image Grid.ColumnSpan="2"
+               Margin="315,62,54,192"
                Source="/Assets/docImage.png"
-               Grid.ColumnSpan="2"
-               Margin="315,62,54,192"/>
+               Stretch="Uniform" />
 
     </Grid>
 </views:BaseWindow>

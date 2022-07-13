@@ -160,6 +160,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\Poppins-Bold.ttf" />
+    <Resource Include="Fonts\PoppinsMedium.ttf" />
+    <Resource Include="Fonts\PoppinsRegular.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

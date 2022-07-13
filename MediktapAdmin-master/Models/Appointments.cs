@@ -16,5 +16,9 @@ namespace MediktapAdmin.Models
     {
         public string Name { get; set; }
         public DateTime AppointmentDate { get; set; }
+        public bool isOnBehalf { get; set; }
+        public string ProspectName { get; set; }
     }
+
+
 }

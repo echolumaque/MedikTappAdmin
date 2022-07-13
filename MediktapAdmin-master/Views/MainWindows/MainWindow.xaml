@@ -7,16 +7,35 @@
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.MainWindows"
                  Title="MedikTap Admin - Login"
                  Width="854"
-                 Height="480" 
-                 Icon="/Assets/mediktapp.png"
-                 ResizeMode="NoResize"
+                 Height="480"
                  d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
                  x:TypeArguments="vm:MainWindowViewModel"
                  Background="#FFECECEC"
                  Foreground="#FFECECEC"
+                 Icon="/Assets/mediktapp.png"
+                 ResizeMode="NoResize"
                  WindowStartupLocation="CenterScreen"
                  WindowStyle="ToolWindow"
                  mc:Ignorable="d">
+    <Window.Resources>
+
+        <Style x:Key="FontDesignMedium"
+               TargetType="Label">
+            <Setter Property="FontFamily" Value="Fonts/#Poppins" />
+        </Style>
+
+        <Style x:Key="FontDesignRegular"
+               TargetType="Label">
+            <Setter Property="FontFamily" Value="Fonts/PoppinsRegular.ttf #Poppins" />
+        </Style>
+
+        <Style x:Key="FontDesignBold"
+               TargetType="Label">
+            <Setter Property="FontFamily" Value="Fonts/Poppins-Bold.ttf #Poppins" />
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*" />
@@ -52,7 +71,7 @@
                  BorderBrush="White"
                  TextWrapping="Wrap" />
 
-        <TextBox Grid.Column="1"
+        <!--<TextBox Grid.Column="1"
                  Grid.ColumnSpan="2"
                  Width="365"
                  Height="30"
@@ -60,7 +79,16 @@
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  BorderBrush="White"
-                 TextWrapping="Wrap" />
+                 TextWrapping="Wrap" />-->
+
+        <PasswordBox Grid.Column="1"
+                     Grid.ColumnSpan="2"
+                     Width="359"
+                     Height="23"
+                     Margin="351,286,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     BorderBrush="White" />
 
         <Button Grid.Column="2"
                 Width="134"
@@ -73,13 +101,15 @@
                 Content="Login"
                 Foreground="White" />
 
-        <Label Grid.Column="1"
+        <Label x:Name="FontDesignRegular"
+               Grid.Column="1"
                Width="75"
                Height="26"
                Margin="348,187,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Username"
+               FontFamily="Poppins Medium"
                Foreground="#FF5900D8" />
 
         <Label Grid.Column="1"
@@ -90,7 +120,7 @@
                VerticalAlignment="Top"
                BorderThickness="0"
                Content="Password"
-               
+               FontFamily="Poppins Medium"
                Foreground="#695CD5" />
 
         <Rectangle Grid.ColumnSpan="2"
@@ -109,6 +139,7 @@
                VerticalAlignment="Top">
             <TextBlock Width="169"
                        Height="72"
+                       FontFamily="Poppins Medium"
                        FontSize="20"
                        Text="Welcome to the MedikTapp admin"
                        TextWrapping="Wrap" />
@@ -117,48 +148,50 @@
         <Image Grid.ColumnSpan="2"
                Width="22"
                Height="27"
-               Source="/Assets/username.png"
-               Margin="321,214,0,0"
+               Margin="320,199,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                OpacityMask="#695CD5"
-               RenderTransformOrigin="0.864,-0.147" />
+               RenderTransformOrigin="0.864,-0.147"
+               Source="/Assets/username.png" />
 
         <Image Grid.ColumnSpan="2"
                Width="22"
                Height="27"
-               Source="/Assets/password.png"
-               Margin="320,289,0,0"
+               Margin="320,277,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               OpacityMask="#695CD5" />
+               OpacityMask="#695CD5"
+               Source="/Assets/password.png" />
 
         <Label Grid.Column="2"
-               Width="167"
+               Width="174"
                Margin="6,142,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Content="Login to your account"
+               FontFamily="Poppins"
                FontSize="16"
+               FontWeight="Bold"
                Foreground="#695CD5" />
-        <Image Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="61,59,0,0" VerticalAlignment="Top" Width="100"/>
 
-        <Image HorizontalAlignment="Left" 
-               Source="C:/tmp/Mediktapp .png"
-               Height="100" 
-               Margin="36,29,0,0" 
-               VerticalAlignment="Top" 
-               Width="100" 
-               Grid.Column="2"/>
+        <Image Grid.Column="2"
+               Width="100"
+               Height="100"
+               Margin="36,29,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Source="C:/tmp/Mediktapp .png" />
 
-        <Button Grid.Column="2" 
+        <Button Grid.Column="2"
+                Margin="41,388,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Background="Transparent"
-                Foreground="#695CD5"
                 BorderThickness="0"
                 Command="{Binding helpCmd}"
-                Content="Do you need help?" 
-                HorizontalAlignment="Left"
-                Margin="41,388,0,0" 
-                VerticalAlignment="Top"/>
+                Content="Do you need help?"
+                Foreground="#695CD5" />
+
     </Grid>
 </view:BaseWindow>

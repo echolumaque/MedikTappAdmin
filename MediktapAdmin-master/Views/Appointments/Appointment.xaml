@@ -4,61 +4,66 @@
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:local="clr-namespace:MediktapAdmin"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:system="clr-namespace:System;assembly=mscorlib"
                  xmlns:view="clr-namespace:MediktapAdmin.Templates"
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.Appointments.ViewModel"
                  Title="Appointment"
-                 Width="800"
-                 Height="450"
-                 Icon="/Assets/mediktapp.png"
+                 Width="820"
+                 Height="480"
                  d:DataContext="{d:DesignInstance Type=vm:AppointmentViewModel}"
                  x:TypeArguments="vm:AppointmentViewModel"
+                 Icon="/Assets/mediktapp.png"
+                 ResizeMode="NoResize"
                  WindowStartupLocation="CenterScreen"
                  WindowStyle="ToolWindow"
-                 xmlns:system="clr-namespace:System;assembly=mscorlib"
                  mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="180*"/>
+            <RowDefinition Height="37*" />
+            <RowDefinition Height="180*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="9*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <Rectangle Width="210"
-                   Height="429"
+        <Rectangle Grid.RowSpan="2"
+                   Width="210"
+                   Height="439"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Fill="White"
-                   Stroke="Black" Grid.RowSpan="2" />
+                   Stroke="White" />
 
-        <Calendar Width="205"
+        <Calendar Grid.Row="1"
+                  Width="205"
                   Height="196"
+                  Margin="10,75,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  DisplayDateStart="{x:Static system:DateTime.Today}"
                   Background="White"
+                  DisplayDateStart="{x:Static system:DateTime.Today}"
                   FontSize="20"
                   Foreground="White"
-                  SelectedDate="{Binding SelectedAppointmentDate}" 
-                  Margin="0,45,0,0" Grid.Row="1" />
+                  SelectedDate="{Binding SelectedAppointmentDate}" />
 
-        <ComboBox Grid.ColumnSpan="2"
-                  Width="582"
-                  Margin="210,72,0,0"
+        <ComboBox Grid.RowSpan="2"
+                  Grid.ColumnSpan="2"
+                  Width="570"
+                  Margin="220,72,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   DisplayMemberPath="ServiceName"
                   ItemsSource="{Binding Services}"
-                  SelectedItem="{Binding SelectedService}" Grid.RowSpan="2" />
+                  SelectedItem="{Binding SelectedService}" />
 
-        <DockPanel Grid.ColumnSpan="2"
+        <DockPanel Grid.Row="1"
+                   Grid.ColumnSpan="2"
                    Width="567"
                    Height="310"
-                   Margin="215,0,0,0"
+                   Margin="225,0,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   LastChildFill="False" Grid.Row="1">
+                   LastChildFill="False">
 
             <DataGrid Width="566"
                       Height="310"
@@ -68,9 +73,22 @@
                     <DataGridTextColumn Width="75"
                                         Binding="{Binding AppointmentDate, StringFormat='{}{0:hh mm tt}'}"
                                         Header="Time" />
+
                     <DataGridTextColumn Width="500"
                                         Binding="{Binding Name}"
                                         Header="Patients" />
+
+                    <DataGridTextColumn Width="200"
+                                        Binding="{Binding isOnBehalf}"
+                                        Header="On Behalf" />
+
+                    <DataGridTextColumn Width="200"
+                                        Binding="{Binding ProspectName}"
+                                        Header="Prospect Name" />
+
+
+
+
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
@@ -83,21 +101,19 @@
                    LastChildFill="False" />
 
 
-        <Button Command="{Binding GoBackCmd}"
+        <Button Grid.RowSpan="2"
                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Background="Transparent"
                 BorderThickness="0"
-               
-                VerticalAlignment="Top" Grid.RowSpan="2">
+                Command="{Binding GoBackCmd}">
 
             <StackPanel>
-                <Image Source="/Assets/purple-arrow.png" 
-                       Height="54"
-                       Width="60" 
-                     
-                       />
+                <Image Width="47"
+                       Height="38"
+                       Source="/Assets/purple-arrow.png" />
             </StackPanel>
         </Button>
-       
+
     </Grid>
 </view:BaseWindow>

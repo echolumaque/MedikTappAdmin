@@ -8,7 +8,7 @@
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.Services.ViewModel"
                  Title="Services"
                  Width="800"
-                 Height="450"
+                 Height="520"
                  d:DataContext="{d:DesignInstance Type=vm:ServiceViewModel}"
                  x:TypeArguments="vm:ServiceViewModel"
                  ResizeMode="NoResize"
@@ -676,14 +676,13 @@
                      Style="{DynamicResource TabItemStyle1}">
 
                 <ListView ItemsSource="{Binding Services}"
-                          
                           SelectedItem="{Binding SelectedService}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding ServiceImage}"/>
+
                                 <TextBlock FontSize="20"
-                                       Text="{Binding ServiceName}"  />
+                                           Text="{Binding ServiceName}" />
 
                             </StackPanel>
 
@@ -721,6 +720,7 @@
                Margin="0,8,0,0"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
                Content="Services"
                FontSize="22" />
 
@@ -755,23 +755,21 @@
                     Foreground="White" />
         </StackPanel>
 
-        <Button Command="{Binding GoBackCmd}"
-                HorizontalAlignment="Left"
+        <Button HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Background="Transparent"
-               
                 BorderThickness="0"
-                VerticalAlignment="Top">
+                Command="{Binding GoBackCmd}">
 
             <StackPanel>
-                <Image Source="/Assets/purple-arrow.png" 
-                       Height="54"
-                       Width="60" 
+                <Image Width="47"
+                       Height="33"
                        Margin="0,0,0,0"
-                      />
+                       Source="/Assets/purple-arrow.png" />
             </StackPanel>
-            
+
         </Button>
-        
+
 
 
 

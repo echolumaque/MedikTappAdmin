@@ -41,5 +41,7 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
                 (await _httpService.GetPatientAppointmentsBasedOnServiceIdAndDate(SelectedService.ServiceId,
                 SelectedAppointmentDate.Year, SelectedAppointmentDate.Month, SelectedAppointmentDate.Day));
         }
+
+        
     }
 }
