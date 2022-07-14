@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mediktapp",
+  "private_key_id": "d30c907c52de4190f9985bc0129c49608fee7f7f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDt9BaR5C27cna8\nyWPkqLELgVvsKCauOGkiSmNS8XMEtAHdgD4AFnlvcaLnoAXZueiqmS/o1TzeZLst\n/r9zyeloZMZ7GoC4NEkYaIb9VBwFczNdapfjq/lAee5vAKDYyEklOKAhXzyHjGBd\netOdUlllQtci+n0OSlivqBGpCASwmNIeiOat1+26KEVuNm4zJa/AoitwLDfKpZv6\np0NVzb3LKhWEL3bpfTaLDd7+uBR4THKS6e5PGiCSoU+OYl4+rsmQic6aXzuIt29w\n3BdpTC5ZkbU1mRIBkG3BP5hMuwZkyuDlK1zVVNMPI+zfR5XtF9CTJS3mPE4Uzlje\nKx59KSqnAgMBAAECggEALM7a9SwHpJWgYFp4EhXmCOmaGrVQ21vKCGgDnhnTc95F\nv6Unh7KzuVWnvIA4udA1TPK9v9Vvud00FiwzdyVda4gWjBXoiUdnQE5mpQuSn0Ab\nOwsYgQngTNDpIkP3BftpMrYgCUi6yDeZ6eB4OtbH+LaGdpK+u9MqMiGu+aqF3476\nf2hTaQjY1Ls5T9K426oJzuolHoRzYhbG+d3GHgpyzhRfo6bpZ/5GZBv/v4Ffn+Ps\nMm1YDW6GDCPsahovBbAwHFK77O8RYkpof5RncTQgR+kNpKHGtgqaUG1nE8lk1RxI\nksFORm8PVLVFVybWQ8spw5qH9Lx+RU/mm9dvSXuJQQKBgQD8vfR0oqvMhzJT3z2z\n3l/R1yqSESC3bsLxj6aW7rTPHUl/LsHGG8Bt8WCPOwm5CYZsWaCXRVab+lT55kjI\nI3xdF0FWwX3z62TYIK8meb36sshqRzm2X86vRphUu4EsCEmUNpE1Uhg1CKYXN5f9\ne4o2RRPROWClmapej2aPrB1nYQKBgQDxBVTOnbOhohBO4lcpGGkR2wfJ+ywSQpMX\nRLbzOeKA7ufVKpS6uKB10waTS8IflMkiUw9UiGSgJlT+eDtARVLJz39vKZLh0SUl\nSNBB0wAItgFfZCBvR7OBowGNLu6KN6QNVFkfKIRVbTkxMF0RWLFvw53+aNmv8+2x\nVgxJmJW3BwKBgQDKbys5sIGCVFdPLmOxic+dt4V1cRqPUbv612BLS+6uZXrUz5KN\nJvU+GjOJBXSILMTqS++Auhzg2eTuNDDffOzDczj2UAyeLlCbe7JOUvyDrGcyGNJ0\n7NATO6wPUg/oQMsOV5Z+6r5Q3BiMSA8JDMZrKXDyB88NVMNM8fbn5Ke4gQKBgHul\nRYWdx6qS7pTZbueJO1XKrOtErK5NcxJL0SNkPbvxVAO6jYRg9QidEtF72wHCnZC7\nVbEDK8QxBgdp/NOS/M7FYVXQ2SZ52fmPqi8qpOjTHk8mmbEc8oz95+za98r2knW4\nIORoL8N3fhCrBAPDIXv5udLrTUoD9Ju2TiVvXtb/AoGAOmPqkOduuLhclMuNv+jt\n8Pl793vUlJC2F2dLm62Xk34mzaT0FoPu/azMmknsTFI+BQMIg5jrx+rISYkfvRvh\niE0poouUGuOI/S/LFcbsAMJcmIuWNIZHF9H/evfhUBtAErW2Tsau9vGwmIjXB4Re\nXZjZHP1sJZOFPWnkviaRPe8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ken4k@mediktapp.iam.gserviceaccount.com",
+  "client_id": "110114576670291943053",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ken4k%40mediktapp.iam.gserviceaccount.com"
+}
