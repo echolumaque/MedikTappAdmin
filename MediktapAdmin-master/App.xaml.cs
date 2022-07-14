@@ -1,4 +1,5 @@
 ﻿using MediktapAdmin.Services.NavigationService;
+using MediktapAdmin.Services.PushNotificationService;
 using MediktapAdmin.Views.AddEditPromos.ViewModel;
 using MediktapAdmin.Views.AddEditServices;
 using MediktapAdmin.Views.Appointments.ViewModel;
@@ -35,12 +36,12 @@ namespace MediktapAdmin
         {
             services.AddSingleton<NavigationService>()
                 .AddSingleton<HttpService>()
+                .AddSingleton<PushNotificationService>()
 
                 .AddTransient<MainWindowViewModel>()
                 .AddTransient<AddEditPromoViewModel>()
                 .AddTransient<HelpWindowViewModel>()
                 .AddTransient<ServiceViewModel>()
-        
                 .AddTransient<AppointmentViewModel>()
                 .AddTransient<AddEditServiceViewModel>()
                 .AddTransient<MedikTappMenuViewModel>();

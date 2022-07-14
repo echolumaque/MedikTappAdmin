@@ -2,10 +2,10 @@
 using MediktapAdmin.Services.NavigationService;
 using Microsoft.Win32;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace MediktapAdmin.Views.AddEditPromos.ViewModel
@@ -63,52 +63,53 @@ namespace MediktapAdmin.Views.AddEditPromos.ViewModel
                 _imageStream = openDialog.OpenFile();
                 PromoImage = BitmapFrame.Create(_imageStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
             }
-
-
         }
         private async Task AddPromo()
         {
-            if (AddEditPromoText == "Add Promo")
-            {
-                _imageStream.CopyTo(_memoryStream);
-                await _httpService.AddPromo(new Promo
-                {
-                    PromoDescription = PromoDescription,
-                    PromoImage = Convert.ToBase64String(_memoryStream.ToArray()),
-                    PromoName = PromoName,
-                    PromoPrice = PromoPrice,
-                    EndDate = EndDate,
-                    StartDate = StartDate
-                }).ConfigureAwait(false);
+            //if (AddEditPromoText == "Add Promo")
+            //{
+            //    _imageStream.CopyTo(_memoryStream);
+            //    await _httpService.AddPromo(new Promo
+            //    {
+            //        PromoDescription = PromoDescription,
+            //        PromoImage = Convert.ToBase64String(_memoryStream.ToArray()),
+            //        PromoName = PromoName,
+            //        PromoPrice = PromoPrice,
+            //        EndDate = EndDate,
+            //        StartDate = StartDate
+            //    }).ConfigureAwait(false);
 
-                MessageBox.Show("Promo has been added to MedikTapp's database", "Service added");
-                _memoryStream.SetLength(0);
-            }
-            else
-            {
-                await _httpService.EditPromo(new Promo
-                {
-                    PromoDescription = PromoDescription,
-                    PromoImage = Convert.ToBase64String(_memoryStream.ToArray()),
-                    PromoName = PromoName,
-                    PromoPrice = PromoPrice,
-                    PromoId = _passedPromo.PromoId,
-                    EndDate = EndDate,
-                    StartDate = StartDate
-                }).ConfigureAwait(false);
+            //    MessageBox.Show("Promo has been added to MedikTapp's database", "Service added");
+            //    _memoryStream.SetLength(0);
+            //}
+            //else
+            //{
+            //    await _httpService.EditPromo(new Promo
+            //    {
+            //        PromoDescription = PromoDescription,
+            //        PromoImage = Convert.ToBase64String(_memoryStream.ToArray()),
+            //        PromoName = PromoName,
+            //        PromoPrice = PromoPrice,
+            //        PromoId = _passedPromo.PromoId,
+            //        EndDate = EndDate,
+            //        StartDate = StartDate
+            //    }).ConfigureAwait(false);
 
-                MessageBox.Show("Promo has been edited to MedikTapp's database", "Service edited");
-                _memoryStream.SetLength(0);
-            }
+            //    MessageBox.Show("Promo has been edited to MedikTapp's database", "Service edited");
+            //    _memoryStream.SetLength(0);
+            //}
 
-            //Reset values
-            var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
-            resource.CopyTo(_memoryStream);
-            PromoImage = BitmapFrame.Create(_memoryStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+            ////Reset values
+            //var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
+            //resource.CopyTo(_memoryStream);
+            //PromoImage = BitmapFrame.Create(_memoryStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
 
-            PromoName = string.Empty;
-            PromoDescription = string.Empty;
-            PromoPrice = default;
+            //PromoName = string.Empty;
+            //PromoDescription = string.Empty;
+            //PromoPrice = default;
+
+            var promoDescription = $"{PromoDescription}\nPrice starts at {PromoPrice.ToString("C", CultureInfo.GetCultureInfo("fil-PH"))}\nPromo period: {StartDate:MMMM dd, yyyy} - {EndDate:MMMM dd, yyyy}";
+            await _pushNotificationService.SendPushNotification(PromoName, promoDescription);
         }
     }
 }
