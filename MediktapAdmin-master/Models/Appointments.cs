@@ -14,10 +14,14 @@ namespace MediktapAdmin.Models
 
     public class AppointmentsWithPatientId
     {
-        public string Name { get; set; }
         public DateTime AppointmentDate { get; set; }
-        public bool isOnBehalf { get; set; }
-        public string ProspectName { get; set; }
+
+        public string PatientName { get; set; }
+        public bool InBehalf { get; set; }
+#nullable enable
+        public string? ProspectName { get; set; }
+      
+#nullable disable
     }
 
 

@@ -31,7 +31,7 @@ namespace MediktapAdmin.Views.AddEditPromos.ViewModel
             }
             else
             {
-                AddEditPromoText = "Add Promo";
+                AddEditPromoText = "Save";
                 PromoName = "";
                 PromoDescription = "";
                 PromoPrice = 0;

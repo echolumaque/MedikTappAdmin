@@ -31,7 +31,7 @@ namespace MediktapAdmin.Views.AddEditServices
             }
             else
             {
-                AddEditServiceText = "Add Service";
+                AddEditServiceText = "Save";
                 ServiceName = "";
                 ServiceDescription = "";
                 ServicePrice = 0;

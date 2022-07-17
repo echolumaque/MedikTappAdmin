@@ -6,8 +6,8 @@
                  xmlns:view="clr-namespace:MediktapAdmin.Templates"
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.AddEditServices"
                  Title="Add or Edit MedikTapp's Service"
-                 Width="1110"
-                 Height="720"
+                 Width="850"
+                 Height="440"
                  d:DataContext="{d:DesignInstance Type=vm:AddEditServiceViewModel}"
                  x:TypeArguments="vm:AddEditServiceViewModel"
                  Icon="/Assets/mediktapp.png"
@@ -16,9 +16,7 @@
                  WindowStyle="ThreeDBorderWindow"
                  mc:Ignorable="d">
 
-    <Grid Width="990"
-          Height="720"
-          Margin="40,-50,40,0">
+    <Grid Margin="20,-45,-35,-216">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
@@ -32,93 +30,87 @@
 
         <Image Grid.Row="0"
                Grid.Column="1"
-               Width="100"
-               Height="100"
-               Margin="145,66,0,74"
+               Width="80"
+               Margin="104,59,0,104"
                HorizontalAlignment="Left"
                Source="/Assets/mediktapp.png" />
 
         <Label Grid.Row="0"
                Grid.Column="0"
-               HorizontalAlignment="Stretch"
+               Width="95"
+               Height="26"
+               Margin="25,0,180,18"
                VerticalAlignment="Bottom"
                HorizontalContentAlignment="Center"
                Content="Service Name"
                FontFamily="Poppins"
-               FontSize="30"
                FontWeight="SemiBold" />
 
         <TextBox Grid.Row="0"
-                 Grid.Column="1"
+                 Grid.ColumnSpan="2"
                  Height="30"
-                 Margin="0,0,0,10"
-                 HorizontalAlignment="Stretch"
+                 Margin="145,0,136,19"
                  VerticalAlignment="Bottom"
                  VerticalContentAlignment="Center"
                  Text="{Binding ServiceName}"
                  TextWrapping="Wrap" />
 
-        <Label Grid.Row="1"
-               Grid.Column="0"
+        <Label Grid.Column="0"
+               Width="140"
+               Height="26"
+               Margin="3,15,0,0"
                HorizontalAlignment="Left"
-               VerticalAlignment="Center"
+               VerticalAlignment="Top"
                HorizontalContentAlignment="Center"
                Content="Service Description"
                FontFamily="Poppins"
-               FontSize="30"
-               FontWeight="SemiBold" />
+               FontWeight="SemiBold" Grid.Row="1" />
 
-        <TextBox Grid.Row="1"
-                 Grid.Column="1"
-                 Height="30"
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Center"
+        <TextBox Grid.ColumnSpan="2"
+                 Height="32"
+                 Margin="145,10,136,0"
+                 VerticalAlignment="Top"
                  VerticalContentAlignment="Center"
                  Text="{Binding ServiceDescription}"
-                 TextWrapping="Wrap" />
+                 TextWrapping="Wrap" Grid.Row="1" />
 
         <Label Grid.Row="1"
-               Grid.RowSpan="2"
                Grid.Column="0"
-               Margin="50,236,0,0"
+               Margin="32,75,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                HorizontalContentAlignment="Center"
                Content="Service Price"
                FontFamily="Poppins"
-               FontSize="30"
                FontWeight="SemiBold" />
 
-        <TextBox Grid.Row="2"
-                 Grid.Column="1"
+        <TextBox Grid.Row="1"
+                 Grid.ColumnSpan="2"
                  Height="30"
-                 Margin="0,10,0,0"
-                 HorizontalAlignment="Stretch"
+                 Margin="145,69,136,0"
                  VerticalAlignment="Top"
                  VerticalContentAlignment="Center"
                  Text="{Binding ServicePrice}"
                  TextWrapping="Wrap" />
 
-        <Button Grid.Row="2"
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-                Margin="226,0,0,0"
-                Padding="20"
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Height="35"
+                Margin="16,161,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="White"
                 BorderThickness="0"
                 Command="{Binding ClearFieldsCmd}"
                 Content="Clear Fields"
-                FontSize="20"
+                FontSize="15"
                 Foreground="#695CD5" />
 
-        <Button Grid.Row="2"
-                Grid.Column="2"
-                Margin="25,0,0,0"
+        <Button Grid.Row="1"
+                Margin="138,107,0,0"
                 Padding="20"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="White"
                 BorderThickness="0"
                 Command="{Binding OpenImageCmd}"
@@ -126,44 +118,56 @@
                 FontSize="20"
                 Foreground="#695CD5" />
 
-        <Button Grid.Row="2"
+        <Button Grid.Row="1"
                 Grid.Column="2"
-                Width="140"
-                Height="44"
-                Margin="185,0,0,0"
-                Padding="10"
+                Width="90"
+                Height="25"
+                Margin="126,166,0,0"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Background="#695CD5"
                 BorderThickness="0"
                 Command="{Binding AddSOrEditerviceCmd}"
                 Content="{Binding AddEditServiceText}"
-                FontSize="20"
+                FontSize="10"
                 Foreground="White" />
 
         <Image Grid.Row="0"
-               Grid.RowSpan="3"
-               Grid.Column="2"
-               Width="300"
-               Height="300"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
+               Grid.RowSpan="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Width="280"
+               Height="250"
+               Margin="205,119,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
                Source="{Binding ServiceImage}" />
 
 
-        <Button HorizontalAlignment="Left"
+        <Button Width="42"
+                Margin="23,9,0,0"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="Transparent"
                 BorderThickness="0"
                 Command="{Binding GoBackCmd}">
 
             <StackPanel>
-                <Image Width="60"
-                       Height="54"
+                <Image Width="63"
+                       Height="50"
                        Margin="-55,30,0,0"
                        Source="/Assets/purple-arrow.png" />
             </StackPanel>
         </Button>
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Margin="28,127,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Center"
+               Content="Service Image"
+               FontFamily="Poppins"
+               FontWeight="SemiBold" />
 
     </Grid>
 </view:BaseWindow>

@@ -74,12 +74,14 @@
                                         Binding="{Binding AppointmentDate, StringFormat='{}{0:hh mm tt}'}"
                                         Header="Time" />
 
-                    <DataGridTextColumn Binding="{Binding Name}"
-                                        Header="Patients" />
+                    <DataGridTextColumn Binding="{Binding PatientName}"
+                                        Header="Patient Name" />
 
-                    <DataGridTextColumn Header="Is On Behalf" />
+                    <DataGridTextColumn Binding="{Binding InBehalf}"
+                                        Header=" Appointment for someone else?" />
 
-                    <DataGridTextColumn Header="Prospect Name" />
+                    <DataGridTextColumn Binding="{Binding ProspectName}"
+                                        Header="Prospect Patient name" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
