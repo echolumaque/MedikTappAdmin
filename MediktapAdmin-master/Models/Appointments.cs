@@ -15,9 +15,10 @@ namespace MediktapAdmin.Models
     public class AppointmentsWithPatientId
     {
         public DateTime AppointmentDate { get; set; }
-
+        public int ProspectsAge { get; set; }
+        public string ProspectsSex { get; set; }
         public string PatientName { get; set; }
-        public bool InBehalf { get; set; }
+        public bool AppointmentForSomeoneElse { get; set; }
 #nullable enable
         public string? ProspectName { get; set; }
       

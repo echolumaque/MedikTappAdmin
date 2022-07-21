@@ -23,19 +23,20 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition />
+            <RowDefinition Height="56*" />
+            <RowDefinition Height="57*" />
+            <RowDefinition Height="57*" />
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="0"
+        <Image Grid.Row="1"
                Grid.Column="1"
                Width="80"
-               Margin="104,59,0,104"
+               Margin="104,55,0,104"
                HorizontalAlignment="Left"
                Source="/Assets/mediktapp.png" />
 
-        <Label Grid.Row="0"
+        <Label Grid.Row="1"
                Grid.Column="0"
                Width="95"
                Height="26"
@@ -46,7 +47,7 @@
                FontFamily="Poppins"
                FontWeight="SemiBold" />
 
-        <TextBox Grid.Row="0"
+        <TextBox Grid.Row="1"
                  Grid.ColumnSpan="2"
                  Height="30"
                  Margin="145,0,136,19"
@@ -55,7 +56,8 @@
                  Text="{Binding ServiceName}"
                  TextWrapping="Wrap" />
 
-        <Label Grid.Column="0"
+        <Label Grid.Row="2"
+               Grid.Column="0"
                Width="140"
                Height="26"
                Margin="3,15,0,0"
@@ -64,17 +66,18 @@
                HorizontalContentAlignment="Center"
                Content="Service Description"
                FontFamily="Poppins"
-               FontWeight="SemiBold" Grid.Row="1" />
+               FontWeight="SemiBold" />
 
-        <TextBox Grid.ColumnSpan="2"
+        <TextBox Grid.Row="2"
+                 Grid.ColumnSpan="2"
                  Height="32"
                  Margin="145,10,136,0"
                  VerticalAlignment="Top"
                  VerticalContentAlignment="Center"
                  Text="{Binding ServiceDescription}"
-                 TextWrapping="Wrap" Grid.Row="1" />
+                 TextWrapping="Wrap" />
 
-        <Label Grid.Row="1"
+        <Label Grid.Row="2"
                Grid.Column="0"
                Margin="32,75,0,0"
                HorizontalAlignment="Left"
@@ -84,7 +87,7 @@
                FontFamily="Poppins"
                FontWeight="SemiBold" />
 
-        <TextBox Grid.Row="1"
+        <TextBox Grid.Row="2"
                  Grid.ColumnSpan="2"
                  Height="30"
                  Margin="145,69,136,0"
@@ -93,7 +96,7 @@
                  Text="{Binding ServicePrice}"
                  TextWrapping="Wrap" />
 
-        <Button Grid.Row="1"
+        <Button Grid.Row="2"
                 Grid.Column="2"
                 Height="35"
                 Margin="16,161,0,0"
@@ -106,7 +109,7 @@
                 FontSize="15"
                 Foreground="#695CD5" />
 
-        <Button Grid.Row="1"
+        <Button Grid.Row="2"
                 Margin="138,107,0,0"
                 Padding="20"
                 HorizontalAlignment="Left"
@@ -118,7 +121,7 @@
                 FontSize="20"
                 Foreground="#695CD5" />
 
-        <Button Grid.Row="1"
+        <Button Grid.Row="2"
                 Grid.Column="2"
                 Width="90"
                 Height="25"
@@ -132,34 +135,33 @@
                 FontSize="10"
                 Foreground="White" />
 
-        <Image Grid.Row="0"
+        <Image Grid.Row="1"
                Grid.RowSpan="2"
                Grid.Column="1"
                Grid.ColumnSpan="2"
                Width="280"
                Height="250"
-               Margin="205,119,0,0"
+               Margin="205,115,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Source="{Binding ServiceImage}" />
 
 
-        <Button Width="42"
-                Margin="23,9,0,0"
+        <Button Grid.RowSpan="2"
+                Width="42"
+                Margin="-20,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="Transparent"
                 BorderThickness="0"
                 Command="{Binding GoBackCmd}">
-
-            <StackPanel>
-                <Image Width="63"
-                       Height="50"
-                       Margin="-55,30,0,0"
+            <StackPanel Margin="0,40,0,0">
+                <Image Width="40"
+                       Height="31"
                        Source="/Assets/purple-arrow.png" />
             </StackPanel>
         </Button>
-        <Label Grid.Row="1"
+        <Label Grid.Row="2"
                Grid.Column="0"
                Margin="28,127,0,0"
                HorizontalAlignment="Left"
@@ -168,6 +170,7 @@
                Content="Service Image"
                FontFamily="Poppins"
                FontWeight="SemiBold" />
+
 
     </Grid>
 </view:BaseWindow>

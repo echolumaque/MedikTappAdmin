@@ -166,9 +166,9 @@
 
         <Image Grid.Column="5"
                Grid.ColumnSpan="3"
-               Width="300"
-               Height="300"
-               Margin="15,84,0,0"
+               Width="282"
+               Height="249"
+               Margin="40,80,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Source="{Binding PromoImage}" />

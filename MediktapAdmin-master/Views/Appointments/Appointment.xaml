@@ -8,7 +8,7 @@
                  xmlns:view="clr-namespace:MediktapAdmin.Templates"
                  xmlns:vm="clr-namespace:MediktapAdmin.Views.Appointments.ViewModel"
                  Title="Appointment"
-                 Width="820"
+                 Width="990"
                  Height="480"
                  d:DataContext="{d:DesignInstance Type=vm:AppointmentViewModel}"
                  x:TypeArguments="vm:AppointmentViewModel"
@@ -43,12 +43,11 @@
                   Background="White"
                   DisplayDateStart="{x:Static system:DateTime.Today}"
                   FontSize="20"
-                  Foreground="White"
-                  SelectedDate="{Binding SelectedAppointmentDate}" />
+                  Foreground="White" />
 
         <ComboBox Grid.RowSpan="2"
                   Grid.ColumnSpan="2"
-                  Width="570"
+                  Width="739"
                   Margin="220,72,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
@@ -58,16 +57,16 @@
 
         <DockPanel Grid.Row="1"
                    Grid.ColumnSpan="2"
-                   Width="567"
+                   Width="790"
                    Height="310"
-                   Margin="225,0,0,0"
+                   Margin="220,0,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    LastChildFill="False">
 
-            <DataGrid Width="566"
+            <DataGrid Width="695"
                       Height="310"
-                      VerticalAlignment="Top"
+                      AutoGenerateColumns="False"
                       ItemsSource="{Binding AppointmentsWithPatientId}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="75"
@@ -77,11 +76,18 @@
                     <DataGridTextColumn Binding="{Binding PatientName}"
                                         Header="Patient Name" />
 
-                    <DataGridTextColumn Binding="{Binding InBehalf}"
-                                        Header=" Appointment for someone else?" />
+                    <DataGridTextColumn Binding="{Binding AppointmentForSomeoneElse}"
+                                        Header="Is Appointment for Someone else? (Prospect)" />
 
                     <DataGridTextColumn Binding="{Binding ProspectName}"
-                                        Header="Prospect Patient name" />
+                                        Header="Prospect Patient Name" />
+
+                    <DataGridTextColumn Binding="{Binding ProspectsSex}"
+                                        Header="Prospect's Sex" />
+
+                    <DataGridTextColumn Binding="{Binding ProspectsAge}"
+                                        Header="Prospect's Age" />
+
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
