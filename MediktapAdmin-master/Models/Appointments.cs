@@ -2,28 +2,15 @@
 
 namespace MediktapAdmin.Models
 {
-    // USED FOR PICKER'S DATA CONTEXT
     public class Appointments
     {
-        public int AppointmentId { get; set; }
-        public int PatientId { get; set; }
-        public int ServiceId { get; set; }
         public DateTime AppointmentDate { get; set; }
-        public string BookingStatus { get; set; }
-    }
-
-    public class AppointmentsWithPatientId
-    {
-        public DateTime AppointmentDate { get; set; }
-        public int ProspectsAge { get; set; }
-        public string ProspectsSex { get; set; }
-        public string PatientName { get; set; }
-        public bool AppointmentForSomeoneElse { get; set; }
+        public string PatientFullName { get; set; }
+        public bool InBehalf { get; set; }
 #nullable enable
-        public string? ProspectName { get; set; }
-      
+        public string? ProspectFullName { get; set; }
+        public string? ProspectGender { get; set; }
+        public int? ProspectAge { get; set; }
 #nullable disable
     }
-
-
 }

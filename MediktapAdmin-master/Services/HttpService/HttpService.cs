@@ -2,7 +2,7 @@
 using MediktapAdmin.Models;
 using Refit;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace MedikTapp.Services.HttpService
 {
@@ -17,31 +17,59 @@ namespace MedikTapp.Services.HttpService
         }
 
         #region Services
-        public Task<IEnumerable<Service>> GetServices() => _medikTappApi.GetService();
-        public Task<IEnumerable<ServicesWithId>> GetServiceNameAndId() => _medikTappApi.GetServiceNameAndId();
-        public Task AddService(Service service) => _medikTappApi.AddService(service);
-        public Task DeleteService(int serviceId) => _medikTappApi.DeleteService(serviceId);
-        public Task EditService(Service service) => _medikTappApi.EditService(service);
+        public ConfiguredTaskAwaitable AddService(Service service)
+        {
+            return _medikTappApi.AddService(service).ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable<IEnumerable<Service>> GetServices()
+        {
+            return _medikTappApi.GetServices().ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable<IEnumerable<ServiceNameAndId>> GetServiceNameAndId()
+        {
+            return _medikTappApi.GetServiceNameAndId().ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable EditService(Service service)
+        {
+            return _medikTappApi.EditService(service).ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable DeleteService(int serviceId)
+        {
+            return _medikTappApi.DeleteService(serviceId).ConfigureAwait(false);
+        }
         #endregion
 
         #region Appointments
-        public Task<IEnumerable<Appointments>> GetAppointmentsByDate(int year, int month, int day, int hour) =>
-            _medikTappApi.GetAppointmentsByDate(year, month, day, hour);
-        public Task<IEnumerable<Appointments>> GetAppointmentsByServiceId(int serviceId) =>
-            _medikTappApi.GetAppointmentsByServiceId(serviceId);
-
-        public Task<IEnumerable<AppointmentsWithPatientId>> GetPatientAppointmentsBasedOnServiceId(int servicecId)
-            => _medikTappApi.GetPatientAppointmentsBasedOnServiceId(servicecId);
-
-        public Task<IEnumerable<AppointmentsWithPatientId>> GetPatientAppointmentsBasedOnServiceIdAndDate(int serviceId, int year,
-            int month, int day) => _medikTappApi.GetPatientAppointmentsBasedOnServiceIdAndDate(serviceId, year, month, day);
+        public ConfiguredTaskAwaitable<IEnumerable<Appointments>> GetAppointments(int year, int month, int day, int serviceId)
+        {
+            return _medikTappApi.GetAppointments(year, month, day, serviceId).ConfigureAwait(false);
+        }
         #endregion
 
         #region Promos
-        public Task<IEnumerable<Promo>> GetPromos() => _medikTappApi.GetPromos();
-        public Task AddPromo(Promo promo) => _medikTappApi.AddPromo(promo);
-        public Task EditPromo(Promo promo) => _medikTappApi.EditPromo(promo);
-        public Task DeletePromo(int serviceId) => _medikTappApi.DeletePromo(serviceId);
+        public ConfiguredTaskAwaitable<int> AddPromo(Service service)
+        {
+            return _medikTappApi.AddPromo(service).ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable<IEnumerable<Service>> GetPromos()
+        {
+            return _medikTappApi.GetPromo().ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable EditPromo(Service service)
+        {
+            return _medikTappApi.EditPromo(service).ConfigureAwait(false);
+        }
+
+        public ConfiguredTaskAwaitable DeletePromo(int serviceId)
+        {
+            return _medikTappApi.DeletePromo(serviceId).ConfigureAwait(false);
+        }
         #endregion
     }
 }

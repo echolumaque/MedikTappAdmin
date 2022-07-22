@@ -3,11 +3,8 @@ using MediktapAdmin.Services.NavigationService;
 using MediktapAdmin.Templates;
 using MediktapAdmin.ViewModels.Base;
 using MedikTapp.Services.HttpService;
-using PropertyChanged;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace MediktapAdmin.Views.Services.ViewModel
 {
@@ -23,23 +20,10 @@ namespace MediktapAdmin.Views.Services.ViewModel
             DeleteCmd = new Command(async () => await DeleteService());
         }
 
-        public ObservableCollection<Service> Services { get; set; }
-        public ObservableCollection<Promo> Promos { get; set; }
-        public Promo SelectedPromo { get; set; }
-        public ICommand AddNewCmd { get; set; }
-        public ICommand EditCmd { get; set; }
-        public ICommand DeleteCmd { get; set; }
-        public string AddButtonText { get; set; }
-        public string EditButtonText { get; set; }
-        public string DeleteButtonText { get; set; }
-        public Service SelectedService { get; set; }
-        [OnChangedMethod(nameof(SelectedTabChanged))]
-        public TabItem SelectedTab { get; set; }
-
         public override async void OnNavigatedTo(NavigationParameters parameters)
         {
             Services = new ObservableCollection<Service>(await _httpService.GetServices());
-            Promos = new ObservableCollection<Promo>(await _httpService.GetPromos());
+            Promos = new ObservableCollection<Service>(await _httpService.GetPromos());
         }
 
         private void SelectedTabChanged()
@@ -87,24 +71,24 @@ namespace MediktapAdmin.Views.Services.ViewModel
                 { "selectedPromo", SelectedPromo },
                 { "isEdit", true }
             });
-            Promos = new ObservableCollection<Promo>(await _httpService.GetPromos());
+            Promos = new ObservableCollection<Service>(await _httpService.GetPromos());
         }
 
         private async Task DeletePromo()
         {
-            await _httpService.DeletePromo(SelectedPromo.PromoId);
-            Promos = new ObservableCollection<Promo>(await _httpService.GetPromos());
+            await _httpService.DeletePromo(SelectedPromo.ServiceId);
+            Promos = new ObservableCollection<Service>(await _httpService.GetPromos());
         }
 
-        public override void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            Services = new()
-            {
-                new()
-                {
-                    ServiceImage = "/Assets/docImage.png",
-                }
-            };
-        }
+        //public override void OnNavigatedFrom(NavigationParameters parameters)
+        //{
+        //    Services = new()
+        //    {
+        //        new()
+        //        {
+        //            ServiceImage = "/Assets/docImage.png",
+        //        }
+        //    };
+        //}
     }
 }

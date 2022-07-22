@@ -6,88 +6,76 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace MediktapAdmin.Views.AddEditServices
 {
     public partial class AddEditServiceViewModel
     {
-        public override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            _memoryStream = new MemoryStream();
-            if (parameters.Count > 0)
-            {
-                _passedService = parameters.GetValue<Service>("selectedService");
-                AddEditServiceText = parameters.GetValue<bool>("isEdit") ? "Edit Service" : "Add Service";
-                var byteArr = Convert.FromBase64String(_passedService.ServiceImage);
-                _memoryStream.Write(byteArr, 0, byteArr.Length);
-
-                ServiceName = _passedService.ServiceName;
-                ServiceDescription = _passedService.ServiceDescription;
-                ServicePrice = _passedService.ServicePrice;
-                ServiceImage = BitmapFrame.Create(_memoryStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
-
-
-            }
-            else
-            {
-                AddEditServiceText = "Save";
-                ServiceName = "";
-                ServiceDescription = "";
-                ServicePrice = 0;
-
-                var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
-                resource.CopyTo(_memoryStream);
-                ServiceImage = BitmapFrame.Create(_memoryStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
-            }
-        }
-
-        public override void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            _memoryStream.Dispose();
-        }
-
         private async Task AddOrEditService()
         {
-            if (AddEditServiceText == "Add Service")
+            if (AddEditServiceText == "Save")
             {
-                _imageStream.CopyTo(_memoryStream);
                 await _httpService.AddService(new Service
                 {
-                    IsPromo = false,
                     ServiceDescription = ServiceDescription,
-                    ServiceImage = Convert.ToBase64String(_memoryStream.ToArray()),
+                    ServiceImage = ImageToBase64(ServiceImage),
                     ServiceName = ServiceName,
                     ServicePrice = ServicePrice
-                }).ConfigureAwait(false);
+                });
 
                 MessageBox.Show("Service has been added to MedikTapp's database", "Service added");
-                _memoryStream.SetLength(0);
             }
             else
             {
                 await _httpService.EditService(new Service
                 {
-                    IsPromo = false,
                     ServiceDescription = ServiceDescription,
-                    ServiceImage = Convert.ToBase64String(_memoryStream.ToArray()),
+                    ServiceImage = ImageToBase64(ServiceImage),
                     ServiceName = ServiceName,
                     ServicePrice = ServicePrice,
                     ServiceId = _passedService.ServiceId
-                }).ConfigureAwait(false);
+                });
 
                 MessageBox.Show("Service has been edited to MedikTapp's database", "Service edited");
-                _memoryStream.SetLength(0);
             }
 
             //Reset values
             var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
-            resource.CopyTo(_memoryStream);
-            ServiceImage = BitmapFrame.Create(_memoryStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+            ServiceImage = StreamToImage(resource);
 
             ServiceName = string.Empty;
             ServiceDescription = string.Empty;
             ServicePrice = default;
+        }
+
+        private ImageSource Base64ToImage(string base64String)
+        {
+            var byteArr = Convert.FromBase64String(base64String);
+            using var memStream = new MemoryStream();
+            memStream.Write(byteArr, 0, byteArr.Length);
+            return BitmapFrame.Create(memStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+        }
+
+        private void ClearFields()
+        {
+            var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
+            ServiceImage = StreamToImage(resource);
+
+            ServiceName = string.Empty;
+            ServiceDescription = string.Empty;
+            ServicePrice = default;
+        }
+
+        private string ImageToBase64(ImageSource imageSource)
+        {
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageSource as BitmapSource));
+            using var memStream = new MemoryStream();
+            encoder.Save(memStream);
+
+            return Convert.ToBase64String(memStream.ToArray());
         }
 
         private void OpenImage()
@@ -102,9 +90,38 @@ namespace MediktapAdmin.Views.AddEditServices
 
             if (openDialog.ShowDialog().Value)
             {
-                _imageStream = openDialog.OpenFile();
+                var imageStream = openDialog.OpenFile();
+                ServiceImage = StreamToImage(imageStream);
+            }
+        }
 
-                ServiceImage = BitmapFrame.Create(_imageStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+        private ImageSource StreamToImage(Stream stream)
+        {
+            return BitmapFrame.Create(stream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+        }
+
+        public override void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if (parameters.Count > 0)
+            {
+                _passedService = parameters.GetValue<Service>("selectedService");
+                AddEditServiceText = parameters.GetValue<bool>("isEdit") ? "Edit Service" : "Add Service";
+
+                ServiceName = _passedService.ServiceName;
+                ServiceDescription = _passedService.ServiceDescription;
+                ServicePrice = _passedService.ServicePrice;
+                ServiceImage = Base64ToImage(_passedService.ServiceImage);
+
+            }
+            else
+            {
+                AddEditServiceText = "Save";
+                ServiceName = "";
+                ServiceDescription = "";
+                ServicePrice = 0;
+
+                var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream("MediktapAdmin.Assets.img-placeholder.png");
+                ServiceImage = StreamToImage(resource);
             }
         }
     }

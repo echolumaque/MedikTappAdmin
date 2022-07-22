@@ -43,7 +43,8 @@
                   Background="White"
                   DisplayDateStart="{x:Static system:DateTime.Today}"
                   FontSize="20"
-                  Foreground="White" />
+                  Foreground="White"
+                  SelectedDate="{Binding SelectedAppointmentDate}" />
 
         <ComboBox Grid.RowSpan="2"
                   Grid.ColumnSpan="2"
@@ -52,40 +53,40 @@
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   DisplayMemberPath="ServiceName"
-                  ItemsSource="{Binding Services}"
+                  ItemsSource="{Binding ServiceNameAndId}"
                   SelectedItem="{Binding SelectedService}" />
 
         <DockPanel Grid.Row="1"
                    Grid.ColumnSpan="2"
-                   Width="790"
+                   Width="739"
                    Height="310"
                    Margin="220,0,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    LastChildFill="False">
 
-            <DataGrid Width="695"
+            <DataGrid Width="742"
                       Height="310"
                       AutoGenerateColumns="False"
-                      ItemsSource="{Binding AppointmentsWithPatientId}">
+                      ItemsSource="{Binding Appointments}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="75"
                                         Binding="{Binding AppointmentDate, StringFormat='{}{0:hh mm tt}'}"
                                         Header="Time" />
 
-                    <DataGridTextColumn Binding="{Binding PatientName}"
+                    <DataGridTextColumn Binding="{Binding PatientFullName}"
                                         Header="Patient Name" />
 
-                    <DataGridTextColumn Binding="{Binding AppointmentForSomeoneElse}"
+                    <DataGridTextColumn Binding="{Binding InBehalf}"
                                         Header="Is Appointment for Someone else? (Prospect)" />
 
-                    <DataGridTextColumn Binding="{Binding ProspectName}"
+                    <DataGridTextColumn Binding="{Binding ProspectFullName}"
                                         Header="Prospect Patient Name" />
 
-                    <DataGridTextColumn Binding="{Binding ProspectsSex}"
+                    <DataGridTextColumn Binding="{Binding ProspectGender}"
                                         Header="Prospect's Sex" />
 
-                    <DataGridTextColumn Binding="{Binding ProspectsAge}"
+                    <DataGridTextColumn Binding="{Binding ProspectAge, TargetNullValue=' '}"
                                         Header="Prospect's Age" />
 
                 </DataGrid.Columns>

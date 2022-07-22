@@ -7,15 +7,15 @@ namespace MediktapAdmin.Views.Appointments.ViewModel
 {
     public partial class AppointmentViewModel
     {
-        public ObservableCollection<Models.ServicesWithId> Services { get; set; }
-        [OnChangedMethod(nameof(SelectedServiceChanged))]
-
-        public ServicesWithId SelectedService { get; set; }
-
+        public ObservableCollection<Models.Appointments> Appointments { get; set; }
         [OnChangedMethod(nameof(SelectedAppointmentDateChanged))]
         public DateTime SelectedAppointmentDate { get; set; } = DateTime.Today;
-        public ObservableCollection<AppointmentsWithPatientId> AppointmentsWithPatientId { get; set; }
+        // ----------------------------------Combobox -------------------------------
+        [OnChangedMethod(nameof(SelectedServiceChanged))]
+        public ServiceNameAndId SelectedService { get; set; }
+        public ObservableCollection<ServiceNameAndId> ServiceNameAndId { get; set; }
+        // ----------------------------------Combobox -------------------------------
         public DateTime StartDate => DateTime.Now.Date;
-  
+
     }
 }
