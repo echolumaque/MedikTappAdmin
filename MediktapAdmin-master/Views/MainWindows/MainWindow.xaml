@@ -69,19 +69,11 @@
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
                  BorderBrush="White"
+                 Text="{Binding Username}"
                  TextWrapping="Wrap" />
 
-        <!--<TextBox Grid.Column="1"
-                 Grid.ColumnSpan="2"
-                 Width="365"
-                 Height="30"
-                 Margin="351,286,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 BorderBrush="White"
-                 TextWrapping="Wrap" />-->
-
-        <PasswordBox Grid.Column="1"
+        <PasswordBox x:Name="PasswordBox"
+                     Grid.Column="1"
                      Grid.ColumnSpan="2"
                      Width="359"
                      Height="23"
@@ -98,6 +90,7 @@
                 VerticalAlignment="Top"
                 Background="#695CD5"
                 Command="{Binding LoginCmd}"
+                CommandParameter="{x:Reference PasswordBox}"
                 Content="Login"
                 Foreground="White" />
 
