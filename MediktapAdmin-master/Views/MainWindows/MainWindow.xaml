@@ -12,7 +12,6 @@
                  x:TypeArguments="vm:MainWindowViewModel"
                  Background="#FFECECEC"
                  Foreground="#FFECECEC"
-                 Icon="/Assets/mediktapp.png"
                  ResizeMode="NoResize"
                  WindowStartupLocation="CenterScreen"
                  WindowStyle="ToolWindow"
@@ -127,7 +126,7 @@
         <Label Grid.ColumnSpan="2"
                Width="179"
                Height="82"
-               Margin="36,221,0,0"
+               Margin="25,221,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top">
             <TextBlock Width="169"

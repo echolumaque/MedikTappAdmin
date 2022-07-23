@@ -53,8 +53,7 @@ namespace MediktapAdmin.Views.AddEditServices
         private ImageSource Base64ToImage(string base64String)
         {
             var byteArr = Convert.FromBase64String(base64String);
-            using var memStream = new MemoryStream();
-            memStream.Write(byteArr, 0, byteArr.Length);
+            using var memStream = new MemoryStream(byteArr);
             return BitmapFrame.Create(memStream, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
         }
 
