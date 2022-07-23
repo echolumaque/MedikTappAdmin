@@ -12,6 +12,7 @@
                  x:TypeArguments="vm:MainWindowViewModel"
                  Background="#FFECECEC"
                  Foreground="#FFECECEC"
+                 Icon="/Assets/mediktapp.png"
                  ResizeMode="NoResize"
                  WindowStartupLocation="CenterScreen"
                  WindowStyle="ToolWindow"
@@ -133,7 +134,7 @@
                        Height="72"
                        FontFamily="Poppins Medium"
                        FontSize="20"
-                       Text="Welcome to the MedikTapp admin"
+                       Text="Welcome to the MedikTapp"
                        TextWrapping="Wrap" />
         </Label>
 
@@ -173,7 +174,7 @@
                Margin="36,29,0,0"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
-               Source="C:/tmp/Mediktapp .png" />
+               Source="/Assets/mediktapp.png" />
 
         <Button Grid.Column="2"
                 Margin="41,388,0,0"
